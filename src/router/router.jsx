@@ -5,6 +5,8 @@ import ContactMe from "../Pages/contact/ContactMe";
 import AboutMe from "../Pages/about/AboutMe";
 import App from "../App";
 import Home from "../Pages/Home/Home";
+import Login from "../Pages/login/Login";
+import Signup from "../Pages/sign up/SignUp";
 
 export const router = createBrowserRouter([
     {
@@ -22,6 +24,14 @@ export const router = createBrowserRouter([
             {
                 path: "/skills",
                 element: <Skills />
+            },
+            {
+                path: "/login",
+                element: <Login />
+            },
+            {
+                path: "/signup",
+                element: <Signup />
             },
             {
                 path: "/contactMe",

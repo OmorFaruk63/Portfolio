@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./navbar.css"
 function Navbar() {
   const [navActive, setNavActive] = useState(false);
@@ -25,7 +25,6 @@ function Navbar() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
   useEffect(() => {
     if (window.innerWidth <= 1200) {
       closeMenu;
@@ -50,45 +49,46 @@ function Navbar() {
 
       <div className={`navbar--items ${navActive ? "active" : ""}`}>
         <ul onClick={() => setNavActive(false)}>
-          <li>
-            <Link
-              to="/"
-              className="navbar--content"
-            >
+          <NavLink
+            to="/"
+            className="navbar--content"
+          >
+            <li>
               Home
-            </Link>
-          </li>
+            </li>
+          </NavLink>
 
-          <li>
-            <Link to="skills"
-              className="navbar--content"
-            >
+          <NavLink to="skills"
+            className="navbar--content"
+          >
+            <li>
               Skills
-            </Link>
-          </li>
+            </li>
+          </NavLink>
 
-          <li>
-            <Link to="project"
-              className="navbar--content"
-            >
+          <NavLink to="project"
+            className="navbar--content"
+          >
+            <li>
               Projects
-            </Link>
-          </li>
+            </li>
+          </NavLink>
 
-          <li>
-            <Link to="aboutMe"
-              className="navbar--content"
-            >
+          <NavLink to="aboutMe"
+            className="navbar--content"
+          >
+            <li>
               About Me
-            </Link>
-          </li>
-          <li>
-            <Link to="contactMe"
-              className="navbar--content"
-            >
+            </li>
+          </NavLink>
+
+          <NavLink to="contactMe"
+            className="navbar--content"
+          >
+            <li>
               Contact Me
-            </Link>
-          </li>
+            </li>
+          </NavLink>
 
 
 
