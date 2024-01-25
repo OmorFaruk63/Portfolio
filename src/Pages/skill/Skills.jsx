@@ -1,6 +1,5 @@
 import data from "../../data/index.json";
 import "./skill.css"
-import { FaHtml5 } from "react-icons/fa6";
 export default function Skills() {
   return (
 
