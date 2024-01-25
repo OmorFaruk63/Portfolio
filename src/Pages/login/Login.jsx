@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import './login.css';
 import { useState } from 'react';
-
+import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { auth } from '../../firebase/firebase';
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({});
+    const [signInWithGoogle] = useSignInWithGoogle(auth);
+    const [signInWithGithub] = useSignInWithGithub(auth);
 
     const validateForm = () => {
         const newErrors = {};
@@ -37,13 +40,11 @@ const Login = () => {
     };
 
     const handleGithubLogin = () => {
-        // Implement GitHub login logic here
-        console.log('GitHub login clicked');
+        signInWithGithub()
     };
 
     const handleGoogleLogin = () => {
-        // Implement Google login logic here
-        console.log('Google login clicked');
+        signInWithGoogle()
     };
 
     return (
@@ -77,11 +78,11 @@ const Login = () => {
                 <button className='btn-outline-primary login-btn' type="submit">Login</button>
             </form>
             <div className="oauth-buttons">
-                <button className="github" onClick={handleGithubLogin}>
-                    <FaGithub /> Sign in with GitHub
-                </button>
                 <button className="google" onClick={handleGoogleLogin}>
                     <FaGoogle /> Sign in with Google
+                </button>
+                <button className="github" onClick={handleGithubLogin}>
+                    <FaGithub /> Sign in with GitHub
                 </button>
             </div>
             <p>
