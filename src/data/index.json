@@ -25,53 +25,62 @@
       "description": "React is a free and open-source front-end JavaScript library for building user interfaces based on components. It is maintained by Meta and a community of individual developers and companies. React can be used to develop single-page, mobile, or server-rendered applications with frameworks like Next.js."
     }
   ],
-  "portfolio": [
+  "project": [
     {
       "id": "1",
-      "src": "./img/placeholder-image.png",
-      "title": "Ahuse",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
-      "link": "View In Github"
+      "src": "./img/expense-tracker.png",
+      "title": "Expense-Tracker",
+      "link1": "https://github.com/OmorFaruk63/-Expense-Tracker-",
+      "link2": "https://expense-tracker-omor.vercel.app/"
     },
     {
       "id": "2",
-      "src": "./img/placeholder-image-1.png",
-      "title": "App Dashboard",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
-      "link": "View In Github"
+      "src": "./img/task.png",
+      "title": "Task Application",
+      "link1": "https://github.com/OmorFaruk63/Task-Application",
+      "link2": "https://task-management-app-omor.vercel.app/"
     },
     {
       "id": "3",
-      "src": "./img/placeholder-image-2.png",
-      "title": "Easy Rentn",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
-      "link": "View In Github"
-    }
-  ],
-  "testimonial": [
-    {
-      "id": "1",
-      "count": "5",
-      "src": "./img/avatar-image.png",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
-      "author_name": "Dianne Russel",
-      "author_designation": "Starbucks"
+      "src": "./img/website.png",
+      "title": "Job_finder_website",
+      "link1": "https://github.com/OmorFaruk63/Job_finder_website-HALAL-JIBIKA-",
+      "link2": "https://halal-jibika-autz.vercel.app/"
     },
     {
-      "id": "2",
-      "count": "5",
-      "src": "./img/avatar-image-1.png",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
-      "author_name": "Kristin Watson",
-      "author_designation": "Louis Vuitton"
+      "id": "4",
+      "src": "./img/qr-code-generator.png",
+      "title": "Qr-Code-Generator App",
+      "link1": "https://github.com/OmorFaruk63/Qr-Code-Generator",
+      "link2": "https://qr-code-generator-omor.vercel.app/"
     },
     {
-      "id": "3",
-      "count": "5",
-      "src": "./img/avatar-image-2.png",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
-      "author_name": "Kathryn Murphy",
-      "author_designation": "McDonald's"
+      "id": "5",
+      "src": "./img/currency-convert.png",
+      "title": "Currency-convert App",
+      "link1": "https://github.com/OmorFaruk63/Currency-convert",
+      "link2": "https://currency-convert-omor.vercel.app/"
+    },
+    {
+      "id": "6",
+      "src": "./img/weather-app.png",
+      "title": "Weather-App",
+      "link1": "https://github.com/OmorFaruk63/Weather-App",
+      "link2": "https://weather-app-omor.vercel.app/"
+    },
+    {
+      "id": "7",
+      "src": "./img/password-generator.png",
+      "title": "Password-Generator-App",
+      "link1": "https://github.com/OmorFaruk63/Password-Generator-App",
+      "link2": "https://password-generator-app-omor.vercel.app/"
+    },
+    {
+      "id": "8",
+      "src": "./img/Coffee.png",
+      "title": "simple Coffee Shop Web site",
+      "link1": "https://github.com/OmorFaruk63/coffee-react",
+      "link2": "https://coffee-react-omor.vercel.app/"
     }
   ]
 }
