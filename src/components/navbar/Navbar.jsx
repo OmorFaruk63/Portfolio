@@ -36,7 +36,7 @@ function Navbar() {
     <nav className={`navbar ${navActive ? "active" : ""}`}>
 
       {!navActive && <div className="nav-logo">
-        <img src="public\img\mainLogo.jpg" alt="Omor Faruk" />
+        <img src="./img/mainLogo.jpg" alt="Omor Faruk" />
       </div>}
 
       <a
@@ -58,6 +58,15 @@ function Navbar() {
               Home
             </Link>
           </li>
+
+          <li>
+            <Link to="skills"
+              className="navbar--content"
+            >
+              Skills
+            </Link>
+          </li>
+
           <li>
             <Link to="project"
               className="navbar--content"
@@ -65,6 +74,7 @@ function Navbar() {
               Projects
             </Link>
           </li>
+
           <li>
             <Link to="aboutMe"
               className="navbar--content"
@@ -79,13 +89,9 @@ function Navbar() {
               Contact Me
             </Link>
           </li>
-          <li>
-            <Link to="skills"
-              className="navbar--content"
-            >
-              Skills
-            </Link>
-          </li>
+
+
+
         </ul>
       </div>
 

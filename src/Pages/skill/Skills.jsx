@@ -1,12 +1,11 @@
 import data from "../../data/index.json";
 import "./skill.css"
+import { FaHtml5 } from "react-icons/fa6";
 export default function Skills() {
   return (
 
     <section className="skills--section" id="mySkills">
-      <div className="portfolio--container">
-        <h2 className="skills--section--heading">My Skills</h2>
-      </div>
+      <h2 className="skills--section--heading">My Skills</h2>
       <div className="skills--section--container">
         {data?.skills?.map((item, index) => (
           <div key={index} className="skills--section--card">
