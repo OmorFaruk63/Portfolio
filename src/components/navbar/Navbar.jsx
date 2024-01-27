@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
-import "./navbar.css"
+import { NavLink } from "react-router-dom";
+import "./navbar.css";
+import { auth } from "../../firebase/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
+import Profile from "../profile/profile";
 function Navbar() {
   const [navActive, setNavActive] = useState(false);
-
+  const [user, loading, error] = useAuthState(auth);
+  const [isTrue, setIsTrue] = useState(false);
   const toggleNav = () => {
     setNavActive(!navActive);
   };
@@ -33,11 +37,11 @@ function Navbar() {
 
   return (
     <nav className={`navbar ${navActive ? "active" : ""}`}>
-
-      {!navActive && <div className="nav-logo">
-        <img src="./img/mainLogo.jpg" alt="Omor Faruk" />
-      </div>}
-
+      {!navActive && (
+        <div className="nav-logo">
+          <img src="./img/mainLogo.jpg" alt="Omor Faruk" />
+        </div>
+      )}
       <a
         className={`nav__hamburger ${navActive ? "active" : ""}`}
         onClick={toggleNav}
@@ -46,61 +50,43 @@ function Navbar() {
         <span className="nav__hamburger__line"></span>
         <span className="nav__hamburger__line"></span>
       </a>
-
       <div className={`navbar--items ${navActive ? "active" : ""}`}>
         <ul onClick={() => setNavActive(false)}>
-          <NavLink
-            to="/"
-            className="navbar--content"
-          >
-            <li>
-              Home
-            </li>
+          <NavLink to="/" className="navbar--content">
+            <li>Home</li>
           </NavLink>
 
-          <NavLink to="skills"
-            className="navbar--content"
-          >
-            <li>
-              Skills
-            </li>
+          <NavLink to="skills" className="navbar--content">
+            <li>Skills</li>
           </NavLink>
 
-          <NavLink to="project"
-            className="navbar--content"
-          >
-            <li>
-              Projects
-            </li>
+          <NavLink to="project" className="navbar--content">
+            <li>Projects</li>
           </NavLink>
 
-          <NavLink to="aboutMe"
-            className="navbar--content"
-          >
-            <li>
-              About Me
-            </li>
+          <NavLink to="aboutMe" className="navbar--content">
+            <li>About Me</li>
           </NavLink>
 
-          <NavLink to="contactMe"
-            className="navbar--content"
-          >
-            <li>
-              Contact Me
-            </li>
+          <NavLink to="contactMe" className="navbar--content">
+            <li>Contact Me</li>
           </NavLink>
-
-
-
         </ul>
       </div>
 
-      {!navActive && <Link to="login"
-        className="btn btn-outline-primary"
-      >
-        Login
-      </Link>}
-
+      {isTrue ? (
+        <img
+          onClick={() => setIsTrue(!isTrue)}
+          src={
+            user?.photoURL
+              ? user?.photoURL
+              : "https://www.carolroth.com/unsolicited-business-advice/wp-content/plugins/clb-final/images/default-image.jpg"
+          }
+          alt="profile image"
+        />
+      ) : (
+        <Profile user={user} />
+      )}
     </nav>
   );
 }
