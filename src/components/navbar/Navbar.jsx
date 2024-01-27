@@ -85,7 +85,9 @@ function Navbar() {
           alt="profile image"
         />
       ) : (
-        <Profile user={user} />
+        <div className="profile">
+          <Profile user={user} setIsTrue={setIsTrue} />
+        </div>
       )}
     </nav>
   );
