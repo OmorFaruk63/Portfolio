@@ -7,7 +7,7 @@ import Profile from "../profile/profile";
 function Navbar() {
   const [navActive, setNavActive] = useState(false);
   const [user, loading, error] = useAuthState(auth);
-  const [isTrue, setIsTrue] = useState(false);
+  const [isTrue, setIsTrue] = useState(true);
   const toggleNav = () => {
     setNavActive(!navActive);
   };
@@ -74,17 +74,17 @@ function Navbar() {
         </ul>
       </div>
 
-      {isTrue ? (
-        <img
-          onClick={() => setIsTrue(!isTrue)}
-          src={
-            user?.photoURL
-              ? user?.photoURL
-              : "https://www.carolroth.com/unsolicited-business-advice/wp-content/plugins/clb-final/images/default-image.jpg"
-          }
-          alt="profile image"
-        />
-      ) : (
+      <img
+        onClick={() => setIsTrue(!isTrue)}
+        src={
+          user?.photoURL
+            ? user?.photoURL
+            : "https://www.carolroth.com/unsolicited-business-advice/wp-content/plugins/clb-final/images/default-image.jpg"
+        }
+        alt="profile image"
+      />
+
+      {!isTrue && (
         <div className="profile">
           <Profile user={user} setIsTrue={setIsTrue} />
         </div>

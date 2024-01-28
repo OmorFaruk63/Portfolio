@@ -1,4 +1,4 @@
-import { Link, NavLink, Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import "./login.css";
 import { useState } from "react";
@@ -8,6 +8,7 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase/firebase";
+import Loading from "../../components/loading/Loading";
 const Login = () => {
   const [user, loading, error] = useAuthState(auth);
   const [email, setEmail] = useState("");
@@ -36,23 +37,27 @@ const Login = () => {
     e.preventDefault();
 
     if (validateForm()) {
-      // Implement login logic here
       console.log("Login successful");
     } else {
       console.log("Form validation failed");
     }
   };
 
-  const handleGithubLogin = () => {
-    signInWithGithub();
+  const handleGithubLogin = async () => {
+    await signInWithGithub();
   };
 
-  const handleGoogleLogin = () => {
-    signInWithGoogle();
+  const handleGoogleLogin = async () => {
+    await signInWithGoogle();
   };
 
-  if (user) {
-    return <Navigate to={"/"} />;
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    console.log(2);
+    return <div>Error loading authentication state</div>;
   }
 
   return (

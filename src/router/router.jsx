@@ -7,41 +7,41 @@ import App from "../App";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/login/Login";
 import Signup from "../Pages/sign up/SignUp";
-import { PrivateRoute } from "../components/PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
-    {
+  {
+    path: "/",
+    element: <App />,
+
+    children: [
+      {
         path: "/",
-        element: <App />,
-        children: [
-            {
-                path: "/",
-                element: <Home />
-            },
-            {
-                path: "/project",
-                element: <Project />
-            },
-            {
-                path: "/skills",
-                element: <Skills />
-            },
-            {
-                path: "/login",
-                element: <Login />
-            },
-            {
-                path: "/signup",
-                element: <Signup />
-            },
-            {
-                path: "/contactMe",
-                element: <ContactMe />
-            },
-            {
-                path: "/aboutMe",
-                element: <AboutMe />
-            },
-        ],
-    },
-])
+        element: <Home />,
+      },
+      {
+        path: "/project",
+        element: <Project />,
+      },
+      {
+        path: "/skills",
+        element: <Skills />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
+      },
+      {
+        path: "/contactMe",
+        element: <ContactMe />,
+      },
+      {
+        path: "/aboutMe",
+        element: <AboutMe />,
+      },
+    ],
+  },
+]);

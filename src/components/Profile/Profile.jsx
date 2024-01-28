@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import "./profile.css";
+import { auth } from "../../firebase/firebase";
+import { useSignOut } from "react-firebase-hooks/auth";
 const Profile = ({ user, setIsTrue }) => {
+  const [signOut, loading, error] = useSignOut(auth);
   return (
     <div onClick={() => setIsTrue((prev) => !prev)} className="profile-box">
       <img
@@ -17,9 +20,9 @@ const Profile = ({ user, setIsTrue }) => {
           Login
         </Link>
       ) : (
-        <Link to="login" className="btn btn-outline-primary">
+        <button onClick={() => signOut()} className="btn btn-outline-primary">
           Log Out
-        </Link>
+        </button>
       )}
     </div>
   );

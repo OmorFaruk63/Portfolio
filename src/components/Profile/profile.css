@@ -1,13 +1,15 @@
 .profile-box {
   position: absolute;
-  width: 150px;
-  border: 1px solid red;
-  top: 10px;
-  right: 10px;
+  width: 140px;
+  top: -30px;
+  right: -575px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
   padding: 10px;
+  border-radius: 10px;
+  background-color: #292929ff;
+  z-index: 10;
 }
