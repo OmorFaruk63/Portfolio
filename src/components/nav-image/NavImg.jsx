@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
-import "./profile.css";
+import "./NavImg.css";
 import { auth } from "../../firebase/firebase";
 import { useSignOut } from "react-firebase-hooks/auth";
-const Profile = ({ user, setIsTrue }) => {
-  const [signOut, loading, error] = useSignOut(auth);
+const NavImg = ({ user, setIsTrue }) => {
+  const [signOut] = useSignOut(auth);
   return (
     <div onClick={() => setIsTrue((prev) => !prev)} className="profile-box">
       <img
@@ -28,4 +29,4 @@ const Profile = ({ user, setIsTrue }) => {
   );
 };
 
-export default Profile;
+export default NavImg;

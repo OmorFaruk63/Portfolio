@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import "./navbar.css";
 import { auth } from "../../firebase/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import Profile from "../profile/profile";
+import NavImg from "../nav-image/NavImg.jsx";
 function Navbar() {
   const [navActive, setNavActive] = useState(false);
   const [user, loading, error] = useAuthState(auth);
@@ -92,7 +92,7 @@ function Navbar() {
         )}
 
         <div className="profile">
-          {!isTrue && <Profile user={user} setIsTrue={setIsTrue} />}
+          {!isTrue && <NavImg user={user} setIsTrue={setIsTrue} />}
         </div>
       </div>
     </nav>
