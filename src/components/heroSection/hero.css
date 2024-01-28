@@ -57,6 +57,13 @@
   line-height: 36px;
 }
 
+.hero-img {
+  max-width: 650px;
+}
+.hero-img img {
+  width: 100%;
+}
+
 @media (max-width: 950px) {
   .hero--section {
     display: flex;
