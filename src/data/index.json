@@ -35,10 +35,10 @@
     },
     {
       "id": "2",
-      "src": "./img/task.png",
-      "title": "Task Application",
-      "link1": "https://github.com/OmorFaruk63/Task-Application",
-      "link2": "https://task-management-app-omor.vercel.app/"
+      "src": "./img/tic-tac-toe-game.png",
+      "title": "Tic-tac-toe-game",
+      "link1": "https://github.com/OmorFaruk63/Tic-tac-toe-game",
+      "link2": "https://tic-tac-toe-game-omor.vercel.app/"
     },
     {
       "id": "3",
@@ -81,6 +81,13 @@
       "title": "simple Coffee Shop Web site",
       "link1": "https://github.com/OmorFaruk63/coffee-react",
       "link2": "https://coffee-react-omor.vercel.app/"
+    },
+    {
+      "id": "9",
+      "src": "./img/task.png",
+      "title": "Task Application",
+      "link1": "https://github.com/OmorFaruk63/Task-Application",
+      "link2": "https://task-management-app-omor.vercel.app/"
     }
   ]
 }
