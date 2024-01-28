@@ -15,7 +15,7 @@ export default function HeroSection() {
             interfaces. With a passion for front-end development, I My skills
             include
             <br />
-            {/* <TypeAnimation
+            <TypeAnimation
               sequence={[
                 "HTML",
                 1000,
@@ -34,7 +34,7 @@ export default function HeroSection() {
                 color: "#7d4d00ff",
               }}
               repeat={Infinity}
-            /> */}
+            />
           </p>
         </div>
         <a
