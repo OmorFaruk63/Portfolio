@@ -53,6 +53,8 @@ const Login = () => {
 
   return (
     <div className="login-container">
+      <span>email : abc@gmail.com </span> <br />
+      <span>password : 12345678 </span>
       <h2>Login</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-group">
