@@ -75,9 +75,14 @@
   border-radius: 50%;
   border: 1px solid rgb(211, 211, 211);
 }
-
+.profile-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
 .profile {
-  position: absolute;
+  position: relative;
 }
 
 .btn-outline-primary {

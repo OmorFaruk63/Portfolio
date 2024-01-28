@@ -1,80 +1,69 @@
 import { Link, Navigate } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import "./login.css";
-import { useState } from "react";
+import { useForm } from "react-hook-form";
 import {
   useAuthState,
+  useSignInWithEmailAndPassword,
   useSignInWithGithub,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase/firebase";
 import Loading from "../../components/loading/Loading";
+import { useState } from "react";
+
 const Login = () => {
-  const [user, loading, error] = useAuthState(auth);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState({});
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const [user] = useAuthState(auth);
+  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
   const [signInWithGoogle] = useSignInWithGoogle(auth);
   const [signInWithGithub] = useSignInWithGithub(auth);
 
-  const validateForm = () => {
-    const newErrors = {};
-
-    if (!email.trim()) {
-      newErrors.email = "Email is required";
-    }
-
-    if (!password.trim()) {
-      newErrors.password = "Password is required";
-    }
-
-    setErrors(newErrors);
-
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (validateForm()) {
-      console.log("Login successful");
-    } else {
-      console.log("Form validation failed");
-    }
+  const [loading, setloading] = useState(false);
+  const onSubmit = async (data) => {
+    setloading(true);
+    await signInWithEmailAndPassword(data.email, data.password);
+    setloading(false);
   };
 
   const handleGithubLogin = async () => {
+    setloading(true);
     await signInWithGithub();
+    setloading(false);
   };
 
   const handleGoogleLogin = async () => {
+    setloading(true);
     await signInWithGoogle();
+    setloading(false);
   };
 
   if (loading) {
     return <Loading />;
   }
 
-  if (error) {
-    console.log(2);
-    return <div>Error loading authentication state</div>;
+  if (user) {
+    return <Navigate to="/" />;
   }
 
   return (
     <div className="login-container">
       <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input
             type="email"
             id="email"
             name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
+            {...register("email", { required: "Email is required" })}
           />
-          {errors.email && <p className="error">{errors.email}</p>}
+          {errors.email && <p className="error">{errors.email.message}</p>}
         </div>
         <div className="form-group">
           <label htmlFor="password">Password:</label>
@@ -82,11 +71,11 @@ const Login = () => {
             type="password"
             id="password"
             name="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
+            {...register("password", { required: "Password is required" })}
           />
-          {errors.password && <p className="error">{errors.password}</p>}
+          {errors.password && (
+            <p className="error">{errors.password.message}</p>
+          )}
         </div>
         <button className="btn-outline-primary login-btn" type="submit">
           Login

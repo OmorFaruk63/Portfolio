@@ -2,7 +2,7 @@
   position: absolute;
   width: 140px;
   top: -30px;
-  right: -575px;
+  right: -21px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,6 +10,11 @@
   gap: 10px;
   padding: 10px;
   border-radius: 10px;
-  background-color: #292929ff;
-  z-index: 10;
+  background-color: rgb(41, 41, 41);
+  color: aliceblue;
+  z-index: 100;
+}
+
+.profile-box span {
+  color: aliceblue;
 }

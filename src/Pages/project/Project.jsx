@@ -1,6 +1,20 @@
+import { Navigate } from "react-router-dom";
+import Loading from "../../components/loading/Loading";
 import data from "../../data/index.json";
-import "./project.css"
+import "./project.css";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../firebase/firebase";
 export default function Project() {
+  const [user, loading, error] = useAuthState(auth);
+
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (!user) {
+    return <Navigate to="/login" />;
+  }
+
   return (
     <section className="project--section" id="Myproject">
       <div className="project--container-box">
@@ -18,10 +32,14 @@ export default function Project() {
               </div>
               <div className="project-link">
                 <span>
-                  <a href={item.link1} target="_blank">Github </a>
+                  <a href={item.link1} target="_blank">
+                    Github{" "}
+                  </a>
                 </span>
                 <span>
-                  <a href={item.link2} target="_blank">Live link </a>
+                  <a href={item.link2} target="_blank">
+                    Live link{" "}
+                  </a>
                 </span>
               </div>
             </div>

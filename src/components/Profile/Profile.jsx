@@ -14,7 +14,7 @@ const Profile = ({ user, setIsTrue }) => {
         }
         alt="profile image"
       />
-
+      <span>{user?.displayName}</span>
       {!user ? (
         <Link to="login" className="btn btn-outline-primary">
           Login

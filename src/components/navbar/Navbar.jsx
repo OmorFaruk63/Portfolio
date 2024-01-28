@@ -8,6 +8,7 @@ function Navbar() {
   const [navActive, setNavActive] = useState(false);
   const [user, loading, error] = useAuthState(auth);
   const [isTrue, setIsTrue] = useState(true);
+
   const toggleNav = () => {
     setNavActive(!navActive);
   };
@@ -56,39 +57,44 @@ function Navbar() {
             <li>Home</li>
           </NavLink>
 
-          <NavLink to="skills" className="navbar--content">
+          <NavLink to="/skills" className="navbar--content">
             <li>Skills</li>
           </NavLink>
 
-          <NavLink to="project" className="navbar--content">
+          <NavLink to="/project" className="navbar--content">
             <li>Projects</li>
           </NavLink>
 
-          <NavLink to="aboutMe" className="navbar--content">
+          <NavLink to="/aboutMe" className="navbar--content">
             <li>About Me</li>
           </NavLink>
 
-          <NavLink to="contactMe" className="navbar--content">
+          <NavLink to="/contactMe" className="navbar--content">
             <li>Contact Me</li>
           </NavLink>
         </ul>
       </div>
 
-      <img
-        onClick={() => setIsTrue(!isTrue)}
-        src={
-          user?.photoURL
-            ? user?.photoURL
-            : "https://www.carolroth.com/unsolicited-business-advice/wp-content/plugins/clb-final/images/default-image.jpg"
-        }
-        alt="profile image"
-      />
+      <div className="profile-flex">
+        {isTrue && (
+          <>
+            <img
+              onClick={() => setIsTrue(false)}
+              src={
+                user?.photoURL
+                  ? user?.photoURL
+                  : "https://www.carolroth.com/unsolicited-business-advice/wp-content/plugins/clb-final/images/default-image.jpg"
+              }
+              alt="profile image"
+            />
+            <span>{user?.displayName}</span>
+          </>
+        )}
 
-      {!isTrue && (
         <div className="profile">
-          <Profile user={user} setIsTrue={setIsTrue} />
+          {!isTrue && <Profile user={user} setIsTrue={setIsTrue} />}
         </div>
-      )}
+      </div>
     </nav>
   );
 }
