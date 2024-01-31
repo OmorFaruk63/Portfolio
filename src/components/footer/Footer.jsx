@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./footer.css"
+import "./footer.css";
 function Footer() {
   return (
     <footer className="footer--container">
@@ -10,37 +10,27 @@ function Footer() {
         <div className="footer--items">
           <ul>
             <li>
-              <Link to="/"
-                className="text-md"
-              >
+              <Link to="/" className="text-md">
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/project"
-                className="text-md"
-              >
+              <Link to="/project" className="text-md">
                 Projects
               </Link>
             </li>
             <li>
-              <Link to="aboutMe"
-                className="text-md"
-              >
+              <Link to="aboutMe" className="text-md">
                 About Me
               </Link>
             </li>
             <li>
-              <Link to="contactMe"
-                className="text-md"
-              >
+              <Link to="contactMe" className="text-md">
                 Contact
               </Link>
             </li>
             <li>
-              <Link to="skills"
-                className="text-md"
-              >
+              <Link to="skills" className="text-md">
                 Skills
               </Link>
             </li>
@@ -115,7 +105,7 @@ function Footer() {
             </li>
             <li>
               <a
-                href="https://www.linkedin.com/"
+                href="https://www.linkedin.com/in/omor-faruk-developer/"
                 className="navbar--content"
                 target="_blank"
                 rel="noreferrer"
@@ -144,23 +134,17 @@ function Footer() {
         <div className="footer--social--icon">
           <ul>
             <li>
-              <Link to="Privacy_Policy"
-                className="text-sm"
-              >
+              <Link to="Privacy_Policy" className="text-sm">
                 Privacy Policy
               </Link>
             </li>
             <li>
-              <Link to="Terms_of_Service"
-                className="text-sm"
-              >
+              <Link to="Terms_of_Service" className="text-sm">
                 Terms of Service
               </Link>
             </li>
             <li>
-              <Link to="Cookies_Settings"
-                className="text-sm"
-              >
+              <Link to="Cookies_Settings" className="text-sm">
                 Cookies Settings
               </Link>
             </li>
