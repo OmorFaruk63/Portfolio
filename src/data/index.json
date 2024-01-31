@@ -4,7 +4,7 @@
       "id": "1",
       "src": "https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/012011/stocklogos-template-01.png?itok=DapYF29D",
       "title": "HTML",
-      "description": "The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser. It defines the content and structure of web content. It is often assisted by technologies such as Cascading Style Sheets and scripting languages such as JavaScript."
+      "description": "The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser. It defines the content and structure of web content. It is often assisted by technologies."
     },
     {
       "id": "2",
@@ -16,13 +16,13 @@
       "id": "3",
       "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnQK9gTb30FwDgp7Ss5lS1yumraT65MmdaR1J2ZLBa5WYjgzafpD8dac4lP-Kp3pWmebY&usqp=CAU",
       "title": "JAVASCRIPT",
-      "description": "JavaScript, often abbreviated as JS, is a programming language and core technology of the World Wide Web, alongside HTML and CSS. As of 2023, 98.7% of websites use JavaScript on the client side for webpage behavior, often incorporating third-party libraries."
+      "description": "JavaScript, often abbreviated as JS, is a programming language and core technology of the World Wide Web, alongside HTML and CSS. As of 2023, 98.7% of websites use JavaScript on the client side for webpage behavior."
     },
     {
       "id": "4",
       "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/768px-React-icon.svg.png",
       "title": "REACT",
-      "description": "React is a free and open-source front-end JavaScript library for building user interfaces based on components. It is maintained by Meta and a community of individual developers and companies. React can be used to develop single-page, mobile, or server-rendered applications with frameworks like Next.js."
+      "description": "React is a free and open-source front-end JavaScript library for building user interfaces based on components. It is maintained by Meta and a community of individual developers and companies. React can be used to develop single-page."
     }
   ],
   "project": [
