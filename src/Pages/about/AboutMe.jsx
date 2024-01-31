@@ -2,9 +2,7 @@ import "./about.css";
 export default function AboutMe() {
   return (
     <section className="about-section">
-      <p className="about-title">
-        Madrasa to Front-end Development: My Journey
-      </p>
+      <p className="about-title">Madrasa to Front-end Development My Journey</p>
       <p className="about-content">
         Hello, I am Omor Faruk. I received my education in a Madrasa, where
         emphasis was placed on Islamic education. Despite my academic focus on

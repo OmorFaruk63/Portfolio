@@ -1,10 +1,5 @@
-.ContactForm {
-  padding: 20px 0;
-}
-
-.container {
-  max-width: 550px;
-  margin: 10px auto;
+.contact {
+  padding: 20px;
 }
 
 .text-center {
@@ -12,11 +7,13 @@
 }
 
 .contactForm {
+  width: 100%;
   background-color: #fff;
-  margin: 10px;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 550px;
+  margin: 10px auto;
 }
 
 .formRow {
@@ -50,4 +47,12 @@
   outline: 2px solid #007bff;
   color: #007bff;
   font-weight: bold;
+}
+
+.contact-num {
+  margin: 10px auto;
+  max-width: 550px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

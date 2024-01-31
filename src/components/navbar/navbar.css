@@ -64,8 +64,6 @@
 }
 
 .active {
-  background-color: rgb(248, 225, 189);
-  padding: 3px 5px;
   border-radius: 3px;
 }
 
