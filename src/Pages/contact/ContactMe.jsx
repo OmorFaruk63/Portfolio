@@ -1,84 +1,161 @@
-import "./contact.css"
+import { addDoc, collection } from "firebase/firestore";
+import { useForm } from "react-hook-form";
+import "./contact.css";
+import { db } from "../../firebase/firebase";
+import { useState } from "react";
+import Loading from "../../components/loading/Loading";
+import { toast } from "react-toastify";
 export default function ContactMe() {
+  const [isLoading, setIsLoading] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = async (data) => {
+    setIsLoading(true);
+    const { name, email, message, subject } = data;
+    try {
+      await addDoc(collection(db, "contact"), {
+        name,
+        email,
+        message,
+        subject,
+      });
+      toast.success("Submit successful.");
+      setIsLoading(false);
+      reset();
+    } catch (error) {
+      toast.error("Something went wrong.");
+      setIsLoading(false);
+    }
+  };
+
   return (
-    <div> Contact </div>
-    // <section id="Contact" className="contact--section">
-    //   <div>
-    //     <p className="sub--title">Get In Touch</p>
-    //     <h2>Contact Me</h2>
-    //     <p className="text-lg">
-    //       Lorem ipsum dolor, sit amet consectetur adipisicing elit. In, odit.
-    //     </p>
-    //   </div>
-    //   <form className="contact--form--container">
-    //     <div className="container">
-    //       <label htmlFor="first-name" className="contact--label">
-    //         <span className="text-md">First Name</span>
-    //         <input
-    //           type="text"
-    //           className="contact--input text-md"
-    //           name="first-name"
-    //           id="first-name"
-    //           required
-    //         />
-    //       </label>
-    //       <label htmlFor="last-name" className="contact--label">
-    //         <span className="text-md">Last Name</span>
-    //         <input
-    //           type="text"
-    //           className="contact--input text-md"
-    //           name="last-name"
-    //           id="last-name"
-    //           required
-    //         />
-    //       </label>
-    //       <label htmlFor="email" className="contact--label">
-    //         <span className="text-md">Email</span>
-    //         <input
-    //           type="email"
-    //           className="contact--input text-md"
-    //           name="email"
-    //           id="email"
-    //           required
-    //         />
-    //       </label>
-    //       <label htmlFor="phone-number" className="contact--label">
-    //         <span className="text-md">phone-number</span>
-    //         <input
-    //           type="number"
-    //           className="contact--input text-md"
-    //           name="phone-number"
-    //           id="phone-number"
-    //           required
-    //         />
-    //       </label>
-    //     </div>
-    //     <label htmlFor="choode-topic" className="contact--label">
-    //       <span className="text-md">Choose a topic</span>
-    //       <select id="choose-topic" className="contact--input text-md">
-    //         <option>Select One...</option>
-    //         <option>Item 1</option>
-    //         <option>Item 2</option>
-    //         <option>Item 3</option>
-    //       </select>
-    //     </label>
-    //     <label htmlFor="message" className="contact--label">
-    //       <span className="text-md">Message</span>
-    //       <textarea
-    //         className="contact--input text-md"
-    //         id="message"
-    //         rows="8"
-    //         placeholder="Type your message..."
-    //       />
-    //     </label>
-    //     <label htmlFor="checkboc" className="checkbox--label">
-    //       <input type="checkbox" required name="checkbox" id="checkbox" />
-    //       <span className="text-sm">I accept the terms</span>
-    //     </label>
-    //     <div>
-    //       <button className="btn btn-primary contact--form--btn">Submit</button>
-    //     </div>
-    //   </form>
-    // </section>
+    <div className="contact">
+      <div className="container">
+        <h1 className="text-center">Contact Form</h1>
+        {/* <ContactForm /> */}
+        <div className="ContactForm">
+          <p className="text-center">Integrated with Firebase Firestore</p>
+          {isLoading ? (
+            <Loading />
+          ) : (
+            <div className="container">
+              <div className="row">
+                <div className="col-12 text-center">
+                  <div className="contactForm">
+                    <form
+                      id="contact-form"
+                      onSubmit={handleSubmit(onSubmit)}
+                      noValidate
+                    >
+                      {/* Row 1 of form */}
+                      <div className="row formRow">
+                        <div className="col-6">
+                          <input
+                            type="text"
+                            name="name"
+                            {...register("name", {
+                              required: {
+                                value: true,
+                                message: "Please enter your name",
+                              },
+                              maxLength: {
+                                value: 30,
+                                message: "Please use 30 characters or less",
+                              },
+                            })}
+                            className="form-control formInput"
+                            placeholder="Name"
+                          ></input>
+                          {errors.name && (
+                            <span className="errorMessage">
+                              {errors.name.message}
+                            </span>
+                          )}
+                        </div>
+                        <div className="col-6">
+                          <input
+                            type="email"
+                            name="email"
+                            {...register("email", {
+                              required: true,
+                              pattern:
+                                /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                            })}
+                            className="form-control formInput"
+                            placeholder="Email address"
+                          ></input>
+                          {errors.email && (
+                            <span className="errorMessage">
+                              Please enter a valid email address
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                      {/* Row 2 of form */}
+                      <div className="row formRow">
+                        <div className="col">
+                          <input
+                            type="text"
+                            name="subject"
+                            {...register("subject", {
+                              required: {
+                                value: true,
+                                message: "Please enter a subject",
+                              },
+                              maxLength: {
+                                value: 75,
+                                message: "Subject cannot exceed 75 characters",
+                              },
+                            })}
+                            className="form-control formInput"
+                            placeholder="Subject"
+                          ></input>
+                          {errors.subject && (
+                            <span className="errorMessage">
+                              {errors.subject.message}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                      {/* Row 3 of form */}
+                      <div className="row formRow">
+                        <div className="col">
+                          <textarea
+                            rows={3}
+                            name="message"
+                            {...register("message", {
+                              required: true,
+                            })}
+                            className="form-control formInput"
+                            placeholder="Message"
+                          ></textarea>
+                          {errors.message && (
+                            <span className="errorMessage">
+                              Please enter a message
+                            </span>
+                          )}
+                        </div>
+                      </div>
+
+                      <button
+                        className="submit-btn btn btn-primary"
+                        type="submit"
+                      >
+                        Submit
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
   );
 }
