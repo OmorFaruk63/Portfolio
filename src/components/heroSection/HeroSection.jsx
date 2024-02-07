@@ -5,14 +5,16 @@ export default function HeroSection() {
     <section id="heroSection" className="hero--section">
       <div className="hero--section--content--box">
         <div className="hero--section--content">
-          <p className="section--title">This is OMOR FARUK</p>
+          <p className="section--title">
+            This is <span>OMOR FARUK</span>
+          </p>
           <h1 className="hero--section--title">
             <span className="hero--section-title--color">Front end</span> <br />
             Developer
           </h1>
           <p className="hero--section-description">
             I specialize in creating responsive and user-friendly web
-            interfaces. With a passion for front-end development, I My skills
+            interfaces. With a passion for front-end development, My skills
             include
             <br />
             <TypeAnimation

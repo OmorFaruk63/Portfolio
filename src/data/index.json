@@ -49,10 +49,10 @@
     },
     {
       "id": "4",
-      "src": "./img/qr-code-generator.png",
-      "title": "Qr-Code-Generator App",
-      "link1": "https://github.com/OmorFaruk63/Qr-Code-Generator",
-      "link2": "https://qr-code-generator-omor.vercel.app/"
+      "src": "./img/redux-todo-app.png",
+      "title": "edux Todo App",
+      "link1": "https://github.com/OmorFaruk63/redux-todo-app",
+      "link2": "https://redux-todo-app-omor.vercel.app/"
     },
     {
       "id": "5",
@@ -88,6 +88,13 @@
       "title": "Task Application",
       "link1": "https://github.com/OmorFaruk63/Task-Application",
       "link2": "https://task-management-app-omor.vercel.app/"
+    },
+    {
+      "id": "10",
+      "src": "./img/qr-code-generator.png",
+      "title": "Qr-Code-Generator App",
+      "link1": "https://github.com/OmorFaruk63/Qr-Code-Generator",
+      "link2": "https://qr-code-generator-omor.vercel.app/"
     }
   ]
 }
