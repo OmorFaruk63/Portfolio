@@ -1,97 +1,104 @@
 .project--section {
-    display: flex;
-    padding: 60px 85px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 40px;
+  display: flex;
+  padding: 60px 85px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
 }
 
 .project--container-box {
-    padding: 0px 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  padding: 0px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .project--container-box h1 {
-    font-size: 60px;
+  font-size: 60px;
 }
 
 .project--section--container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 42.6px;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 42.6px;
+  width: 100%;
 }
 
 .project--section--img {
-    border-radius: 8px;
-    width: 100%;
+  border-radius: 8px;
+  width: 100%;
 }
 
-.project--section--img>img {
-    width: 100%;
+.project--section--img > img {
+  width: 100%;
 }
 
 .project--section--card {
-    width: 325px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 32px;
-    background: #fff;
-    box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-    overflow: hidden;
+  width: 325px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  background: #fff;
+  box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .project--section--card--content {
-    display: flex;
-    padding: 32px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 32px;
-    align-self: stretch;
+  display: flex;
+  padding: 32px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  align-self: stretch;
 }
 
 .project--section--title {
-    color: var(--heading-color);
+  color: var(--heading-color);
 }
 
 .project--link {
-    text-decoration: none;
-    display: flex;
-    gap: 16px;
-    padding-bottom: 10.6px;
-    font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  gap: 16px;
+  padding-bottom: 10.6px;
+  font-weight: 600;
 }
 
 .project--section--card:hover path {
-    stroke: #006b6a;
+  stroke: #006b6a;
 }
 
 .project-link {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.project-link span {
-    cursor: pointer;
+.project-link span > a {
+  font-style: italic;
+  color: rgb(1, 157, 255);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.project-link span > a:hover {
+  color: rgb(4, 112, 158);
 }
 
 @media (max-width: 550px) {
-    .project--section {
-        padding: 25px;
-        gap: 20px;
-    }
+  .project--section {
+    padding: 25px;
+    gap: 20px;
+  }
 
-    .project--section--card {
-        width: 345px;
-    }
-
+  .project--section--card {
+    width: 345px;
+  }
 }
