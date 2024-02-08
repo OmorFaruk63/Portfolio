@@ -11,8 +11,11 @@ import {
 import { auth } from "../../firebase/firebase";
 import Loading from "../../components/loading/Loading";
 import { useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Login = () => {
+  AOS.init({ duration: 1000 });
   const {
     register,
     handleSubmit,
@@ -52,48 +55,50 @@ const Login = () => {
   }
 
   return (
-    <div className="login-container">
-      <span>email : abc@gmail.com </span> <br />
-      <span>password : 12345678 </span>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            {...register("email", { required: "Email is required" })}
-          />
-          {errors.email && <p className="error">{errors.email.message}</p>}
+    <div data-aos="flip-right">
+      <div className="login-container">
+        <span>email : abc@gmail.com </span> <br />
+        <span>password : 12345678 </span>
+        <h2>Login</h2>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="form-group">
+            <label htmlFor="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              {...register("email", { required: "Email is required" })}
+            />
+            {errors.email && <p className="error">{errors.email.message}</p>}
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              {...register("password", { required: "Password is required" })}
+            />
+            {errors.password && (
+              <p className="error">{errors.password.message}</p>
+            )}
+          </div>
+          <button className="btn-outline-primary login-btn" type="submit">
+            Login
+          </button>
+        </form>
+        <div className="oauth-buttons">
+          <button className="google" onClick={handleGoogleLogin}>
+            <FaGoogle /> Sign in with Google
+          </button>
+          <button className="github" onClick={handleGithubLogin}>
+            <FaGithub /> Sign in with GitHub
+          </button>
         </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            {...register("password", { required: "Password is required" })}
-          />
-          {errors.password && (
-            <p className="error">{errors.password.message}</p>
-          )}
-        </div>
-        <button className="btn-outline-primary login-btn" type="submit">
-          Login
-        </button>
-      </form>
-      <div className="oauth-buttons">
-        <button className="google" onClick={handleGoogleLogin}>
-          <FaGoogle /> Sign in with Google
-        </button>
-        <button className="github" onClick={handleGithubLogin}>
-          <FaGithub /> Sign in with GitHub
-        </button>
+        <p>
+          Don't have an account? <Link to="/signup">Sign up</Link>
+        </p>
       </div>
-      <p>
-        Don't have an account? <Link to="/signup">Sign up</Link>
-      </p>
     </div>
   );
 };

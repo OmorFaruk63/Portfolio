@@ -12,8 +12,10 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loading from "../../components/loading/Loading";
 import { useState } from "react";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Signup = () => {
+  AOS.init({ duration: 1000 });
   const navigate = useNavigate();
   const [updateProfile] = useUpdateProfile(auth);
   const [authUser] = useAuthState(auth);
@@ -56,53 +58,57 @@ const Signup = () => {
       {loading ? (
         <Loading />
       ) : (
-        <div className="signup-container">
-          <h2>Sign Up</h2>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="form-group">
-              <label htmlFor="name">Name:</label>
-              <input
-                type="text"
-                id="name"
-                {...register("name", { required: "Name is required" })}
-              />
-              {errors.name && <p className="error">{errors.name.message}</p>}
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email:</label>
-              <input
-                type="email"
-                id="email"
-                {...register("email", { required: "Email is required" })}
-              />
-              {errors.email && <p className="error">{errors.email.message}</p>}
-            </div>
-            <div className="form-group">
-              <label htmlFor="password">Password:</label>
-              <input
-                type="password"
-                id="password"
-                {...register("password", {
-                  required: "Password is required",
-                  minLength: {
-                    value: 8,
-                    message: "Password must be at least 8 characters",
-                  },
-                })}
-              />
-              {errors.password && (
-                <p className="error">{errors.password.message}</p>
-              )}
-            </div>
+        <div data-aos="flip-left">
+          <div className="signup-container">
+            <h2>Sign Up</h2>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <div className="form-group">
+                <label htmlFor="name">Name:</label>
+                <input
+                  type="text"
+                  id="name"
+                  {...register("name", { required: "Name is required" })}
+                />
+                {errors.name && <p className="error">{errors.name.message}</p>}
+              </div>
+              <div className="form-group">
+                <label htmlFor="email">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  {...register("email", { required: "Email is required" })}
+                />
+                {errors.email && (
+                  <p className="error">{errors.email.message}</p>
+                )}
+              </div>
+              <div className="form-group">
+                <label htmlFor="password">Password:</label>
+                <input
+                  type="password"
+                  id="password"
+                  {...register("password", {
+                    required: "Password is required",
+                    minLength: {
+                      value: 8,
+                      message: "Password must be at least 8 characters",
+                    },
+                  })}
+                />
+                {errors.password && (
+                  <p className="error">{errors.password.message}</p>
+                )}
+              </div>
 
-            <button className="btn-outline-primary signup-btn" type="submit">
-              Sign Up
-            </button>
-          </form>
+              <button className="btn-outline-primary signup-btn" type="submit">
+                Sign Up
+              </button>
+            </form>
 
-          <p>
-            Already have an account? <Link to="/login">Login</Link>
-          </p>
+            <p>
+              Already have an account? <Link to="/login">Login</Link>
+            </p>
+          </div>
         </div>
       )}
     </>

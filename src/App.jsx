@@ -4,10 +4,20 @@ import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+import AnimatedCursor from "react-animated-cursor";
+
 function App() {
   return (
     <div className="App">
       <Navbar />
+
+      <AnimatedCursor
+        style={{ zIndex: 1100 }}
+        color="2, 151, 214"
+        innerSize={16}
+        outerSize={10}
+      />
 
       <ToastContainer
         position="top-right"
