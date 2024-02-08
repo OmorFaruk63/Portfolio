@@ -15,10 +15,9 @@ function App() {
       <AnimatedCursor
         style={{ zIndex: 1100 }}
         color="2, 151, 214"
-        innerSize={16}
+        innerSize={15}
         outerSize={10}
       />
-
       <ToastContainer
         position="top-right"
         autoClose={3000}

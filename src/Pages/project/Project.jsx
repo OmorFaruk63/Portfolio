@@ -17,18 +17,17 @@ export default function Project() {
     return <Navigate to="/login" />;
   }
 
-  AOS.init({ duration: 1000, offset: 300 });
+  AOS.init({ duration: 1000, offset: 200, delay: 500 });
 
   return (
     <section className="project--section" id="Myproject">
       <div className="project--container-box">
         <h1 className="section--heading">My Project</h1>
       </div>
-
       <div className="project--section--container">
         {data?.project?.map((item, index) => (
-          <div key={index} className="project--section--card">
-            <div data-aos="flip-right">
+          <div key={index} data-aos="fade-up">
+            <div className="project--section--card">
               <div className="project--section--img">
                 <img src={item.src} alt="Placeholder" />
               </div>
