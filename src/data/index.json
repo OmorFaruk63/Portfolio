@@ -1,16 +1,22 @@
 {
   "skills": [
     {
-      "id": "1",
-      "src": "https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/012011/stocklogos-template-01.png?itok=DapYF29D",
-      "title": "HTML",
-      "description": "The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser. It defines the content and structure of web content. It is often assisted by technologies."
+      "id": "6",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png",
+      "title": "VUE JS",
+      "description": "Vue.js is an open-source front-end JavaScript framework for building user interfaces . Created by Evan You, it is maintained by him and the active core team members, focusing on simplicity and flexibility for developers."
     },
     {
-      "id": "2",
-      "src": "https://diziglobalsolution.com/wp-content/uploads/2023/04/logo-css-3-1536.png",
-      "title": "CSS",
-      "description": "Cascading Style Sheets is a style sheet language used for specifying the presentation and styling of a document written in a markup language such as HTML or XML. CSS is a cornerstone technology of the World Wide Web,"
+      "id": "5",
+      "src": "https://www.datocms-assets.com/98835/1684410508-image-7.png",
+      "title": "NEXT JS",
+      "description": "  Next.js is a React framework by Vercel that adds features like server-side rendering and static site generation, enabling advanced web applications. It simplifies the development process and improves performance and SEO."
+    },
+    {
+      "id": "4",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/768px-React-icon.svg.png",
+      "title": "REACT",
+      "description": "React is a free and open-source front-end JavaScript library for building user interfaces based on components. It is maintained by Meta and a community of individual developers and companies. React can be used to develop single-page."
     },
     {
       "id": "3",
@@ -19,10 +25,16 @@
       "description": "JavaScript, often abbreviated as JS, is a programming language and core technology of the World Wide Web, alongside HTML and CSS. As of 2023, 98.7% of websites use JavaScript on the client side for webpage behavior."
     },
     {
-      "id": "4",
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/768px-React-icon.svg.png",
-      "title": "REACT",
-      "description": "React is a free and open-source front-end JavaScript library for building user interfaces based on components. It is maintained by Meta and a community of individual developers and companies. React can be used to develop single-page."
+      "id": "2",
+      "src": "https://diziglobalsolution.com/wp-content/uploads/2023/04/logo-css-3-1536.png",
+      "title": "CSS",
+      "description": "Cascading Style Sheets is a style sheet language used for specifying the presentation and styling of a document written in a markup language such as HTML or XML. CSS is a cornerstone technology of the World Wide Web,"
+    },
+    {
+      "id": "1",
+      "src": "https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/012011/stocklogos-template-01.png?itok=DapYF29D",
+      "title": "HTML",
+      "description": "The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser. It defines the content and structure of web content. It is often assisted by technologies."
     }
   ],
   "project": [

@@ -4,6 +4,12 @@ import AOS from "aos";
 import "./skill.css";
 export default function Skills() {
   AOS.init({ duration: 1000, offset: 250 });
+  // eslint-disable-next-line no-unsafe-optional-chaining
+  let data1 = data?.skills ? [...data?.skills] : [];
+
+  data1 = data1?.reverse();
+  console.log(data1);
+
   return (
     <section className="skills--section" id="mySkills">
       <h2 className="skills--section--heading">My Skills</h2>
@@ -27,3 +33,5 @@ export default function Skills() {
     </section>
   );
 }
+
+

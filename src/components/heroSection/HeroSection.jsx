@@ -42,7 +42,7 @@ export default function HeroSection() {
         <a
           className="btn btn-primary"
           href="https://drive.google.com/file/d/1Pe03YkIDERVh9jmJZh46VRCMNrRdJebi/view?usp=sharing"
-          target="_blank"
+          target="_blank" rel="noreferrer"
         >
           Download Resume
         </a>
