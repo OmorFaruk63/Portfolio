@@ -1,10 +1,16 @@
 {
   "skills": [
     {
-      "id": "6",
+      "id": "7",
       "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png",
       "title": "VUE JS",
       "description": "Vue.js is an open-source front-end JavaScript framework for building user interfaces . Created by Evan You, it is maintained by him and the active core team members, focusing on simplicity and flexibility for developers."
+    },
+    {
+      "id": "6",
+      "src": "https://cdn-images-1.medium.com/max/1600/1*Vo5RDpNkOsfDn8sx06mthA.png",
+      "title": "REDUX",
+      "description": "Redux is an open-source JavaScript library for managing and centralizing application state. It is most commonly used with libraries such as React or Angular for building user interfaces. Similar to Facebook's Flux architecture"
     },
     {
       "id": "5",
