@@ -1,0 +1,459 @@
+//service section css here
+.services {
+    @extend %p-rel,
+    %of-hidden;
+
+    &__wrapper{
+        @extend %p-rel;
+        &::after{
+            @extend %p-abs;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: $body-color;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            filter: blur(100px);
+        }
+    }
+
+
+    &__list{
+        @extend %d-grid,
+        %p-rel;
+        gap: 16px;
+
+        @include breakpoint(lg){
+            padding-left: 40px;
+        }
+
+        &-title{
+            @extend %flex,
+            %align-i-center,
+            %justify-between;
+            border-radius: 12px !important;
+            background-color: $bg-color;
+        }
+
+        &::after{
+            display: none;
+            @extend %p-abs;
+            content: "";
+            width: 2px;
+            height: 100%;
+            background-color: $bg-color;
+            top: 0;
+            left: 0;
+
+            @include breakpoint(lg){
+                display: block;
+            }
+        }
+
+        &-item {
+            background-color: $bg-color;
+            border-radius: 12px !important;
+            transition: $transition;
+        
+            position: relative;
+        
+            &::before {
+            content: '';
+            position: absolute;
+            height: 1%;
+            width: 2px;
+            background-color: $secondary-color;
+            left: -40px;
+            top: 0;
+            z-index: 1;
+            opacity: 0;
+            transition: $transition;
+            }
+        
+            &.active {
+            &::before {
+                opacity: 1;
+                height: 100%;
+            }
+            }
+        
+            &::after {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              border-radius: inherit; // Inherit border-radius
+              padding: 1px; // Adjust to match the border thickness
+              background: linear-gradient(120deg, rgba(#6B7FFF, 0.5), rgba(#C4EF17, 0.8));
+              -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+              mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+              -webkit-mask-composite: xor;
+              mask-composite: exclude;
+              transition: all .3s ease-in-out;
+              opacity: .1;
+            }
+        
+            // &:hover {
+            //   &::after {
+            //     opacity: 1;
+            //   }
+            // }
+        }
+
+        &-item:has(.accordion-collapse.show),.active {
+            border: none;
+            &::before {
+                opacity: 1;
+                height: 100%;
+            }
+
+            &::after{
+                opacity: 1;
+            }
+        }
+
+        &-btn{
+            @extend %d-grid,%p-rel,
+            %place-i-center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid $brand-color;
+            font-weight: 600;
+            color: $brand-color;
+            margin-inline-end: 2rem;
+            z-index: 2;
+
+            &:hover,
+            &.active{
+                transform: rotate(-45deg);
+            }
+
+        }
+    }
+
+
+
+    // shape
+    &__shape {
+
+        &-item {
+            @extend %p-abs;
+
+            &--1 {
+                display: none;
+                width: 200px;
+                top:400px;
+                left: 200px;
+                @include animation(floating 3s cubic-bezier(0.41, 0.15, 0.64, 0.86) infinite alternate);
+
+
+                @include breakpoint(lg) {
+                    display: block;
+                    left: 200px;
+                    top: 500px;
+                }
+
+                @include breakpoint(xl) {
+                    top: 420px;
+                    left: 150px;
+                }
+
+                @include breakpoint(xxl) {
+                    width: auto;
+                    top: 480px;
+                    left: 350px;
+                }
+            }
+
+
+            // home 3
+            &--2 {
+                display: none;
+                @extend %p-abs;
+                width: 40px;
+                opacity: .5;
+                @include animation(rotate 5s cubic-bezier(0.41, 0.15, 0.64, 0.86) infinite alternate);
+
+
+                @include breakpoint(lg) {
+                    display: block;
+                    left: 5%;
+                    bottom: 100px;
+                }
+
+                @include breakpoint(xl) {
+                    bottom: 90px;
+                    left: 2%;
+                }
+
+                @include breakpoint(xxl) {
+                    bottom: 100px;
+                    left: 7%;
+                }
+            }
+
+            &--3 {
+
+                top: 0.5%;
+                right: 2%;
+                width: 50px;
+                @include animation(rotate 3s cubic-bezier(0.41, 0.15, 0.64, 0.86) infinite alternate);
+
+                @include breakpoint(sm) {
+                    width: 70px;
+                    top: 2%;
+                    right: 8%;
+                }
+
+                @include breakpoint(md) {
+                    width: auto;
+                    top: 2%;
+                    right: 8%;
+                }
+
+                @include breakpoint(lg) {
+                    top: auto;
+                    bottom: 3%;
+                    right: 4%;
+                }
+
+                @include breakpoint(xl) {
+                    bottom: 4%;
+                    right: 4%;
+                }
+
+                @include breakpoint(xxl) {
+                    bottom: 4%;
+                    right: 4%;
+                }
+
+                @include breakpoint(xxxl) {
+                    bottom: 6%;
+                    right: 13%;
+                }
+            }
+
+        }
+
+    }
+
+}
+
+
+.services2{
+    @extend %p-rel,%of-hidden;
+    &__item{
+        &-inner{
+            @extend %p-40;
+            border-radius: 16px;
+            background-color: $bg-color;
+            transition: $transition;
+        }
+
+        &-wrapper{
+            @extend %p-rel;
+            z-index: 2;
+        }
+
+        &-thumb{
+          @extend %d-grid,
+          %place-i-center,
+          %mb-35;
+          border-radius: 99px;
+          background-color:$border-color;
+          @include box(72px);
+        }
+
+        &-content{
+          h4{
+            margin-bottom: 12px;
+          }
+          p{
+            margin-bottom: 0;
+          }
+        }
+    }
+
+    &__slider-prev,
+    &__slider-next {
+    position: absolute;
+    top: 380px;
+    z-index: 1;
+
+    @include breakpoint(sm){
+        top: 360px;
+    }
+
+    @include breakpoint(md){
+        top: 380px;
+    }
+
+    @include breakpoint(lg){
+        top: 400px;
+    }
+    }
+
+    &__slider-prev{
+      left: 0;
+      @include breakpoint(md){
+        left: 12px;
+      }
+
+      @include breakpoint(xl){
+        left: 300px;
+      }
+    }
+
+    &__slider-next{
+      right: 0;
+
+      @include breakpoint(md){
+        right: 12px;
+      }
+
+      @include breakpoint(xl){
+        right: 300px;
+      }
+    }
+
+
+}
+
+
+.services3{
+    @extend %of-hidden;
+    background-color:hsla(0,0%,10%,1);
+    background-image:
+    radial-gradient(at 1% 0%, hsla(71,86%,51%,0.05) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(28,0%,10%,1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(71,86%,51%,0.18) 0px, transparent 50%);
+    &__item{
+        &-inner{
+            @extend %p-40,
+            %text-center;
+            background-color: $bg-color;
+            border-radius: 16px;
+            transition: $transition;
+
+            &:hover,
+            &.active{
+
+                .services3__item{
+                    &-content{
+                        .text-btn{
+                            color: $brand-color !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-wrapper{
+            @extend %p-rel;
+            z-index: 2;
+        }
+
+        &-thumb{
+            @extend %d-grid,
+            %place-i-center;
+            @include box(80px);
+            background-color: $bg-color-2;
+            border-radius: 99px;
+            margin-inline: auto;
+            margin-bottom: 32px;
+
+            i,svg{
+                color: $secondary-color;
+                font-size: 2rem;
+            }
+        }
+
+        &-content{
+            h4{
+                margin-bottom: 12px;
+            }
+
+            .text-btn{
+                color: $title-color !important;
+                transition: $transition;
+                margin-top: 16px;
+
+            }
+        }
+    }
+}
+
+
+.services-category {
+    @extend %p-rel,
+    %py-25;
+
+    @include breakpoint(md){
+        padding-block: 30px;
+    }
+
+    @include breakpoint(lg){
+        padding-block: 40px;
+    }
+
+
+    &::after {
+
+        background: linear-gradient(108.73deg, rgba(107, 127, 255, 0.2) 16.88%, #C4EF17 91.69%);
+        content: "";
+        height: 1.5px;
+        left: 0;
+        top: 0;
+        width: 100%;
+
+        @extend %p-abs;
+
+    }
+
+
+    &::before {
+        @extend %p-abs;
+        content: "";
+        width: 100%;
+        height: 1.5px;
+        background: linear-gradient(108.73deg, rgba(107, 127, 255, 0.2) 16.88%, #C4EF17 91.69%);
+        transform: rotate(-180deg);
+        bottom: 0;
+        left: 0;
+
+    }
+
+
+    &__item {
+        @extend %d-flex,
+        %align-i-center,
+        %justify-center;
+
+        h5 {
+            @extend %text-medium,
+            %mb-0;
+        }
+
+
+        &-icon {
+            margin-inline-end: 20px;
+
+            @include breakpoint(md) {
+                margin-inline-end: 20px;
+            }
+
+            @include breakpoint(lg) {
+                margin-inline-end: 32px;
+            }
+
+            @include breakpoint(xl) {
+                margin-inline-end: 35px;
+            }
+        }
+    }
+}
+

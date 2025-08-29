@@ -1,0 +1,33 @@
+.error {
+    @extend %p-rel;
+    &__inner {
+        @extend %p-20;
+
+        @include breakpoint(sm) {
+            padding: 50px;
+        }
+        @include breakpoint(lg) {
+            padding: 100px;
+        }
+    }
+    &__thumb{
+        img{
+            border-radius: 16px;
+            @extend %mb-45;
+        }
+    }
+
+    &__content {
+        h2 {
+            @extend %text-capitalize;
+        }
+
+        p {
+            max-inline-size: 53ch;
+            margin: 0 auto;
+        }
+        a{
+            @extend %mt-45;
+        }
+    }
+}

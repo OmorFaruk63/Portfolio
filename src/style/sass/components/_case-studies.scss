@@ -1,0 +1,158 @@
+.case-studies {
+    @extend %of-hidden,
+    %p-rel;
+    background-color:hsla(60,2%,7%,1);
+    background-image:
+    radial-gradient(at 0% 100%, hsla(71,86%,51%,0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 48%, hsla(71,86%,51%,0.1) 0px, transparent 50%);
+
+
+    &__wrapper {
+        @extend %p-rel;
+        z-index: 2;
+    }
+
+    &__item {
+        &-inner {
+            @extend
+            %of-hidden;
+            @include add-prefix(transition, $transition);
+            border: 2px solid transparent;
+            box-shadow: 0px 16px 48px 0px rgba(6, 35, 63, 0.03), 0px -16px 48px 0px rgba(6, 35, 63, 0.03);
+            border-radius: 16px;
+
+            &--style2 {
+                border: none;
+
+                &:hover {
+                    border: none;
+                    box-shadow: 0px 8px 16px rgba(3, 23, 41, 0.08);
+
+                    .blog {
+                        &__thumb {
+                            img {
+                                @include add-prefix(transform, scale(1.05));
+                            }
+                        }
+
+                        &__content {
+                            h5 {
+                                color: $secondary-color;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
+        &-content {
+            margin-top: 24px;
+            h4 {
+                @extend %text-semibold,
+                %text-capitalize,
+                %text-clamp-1;
+                @include add-prefix(transition, $transition);
+    
+    
+                &.style2 {
+                    &:hover {
+                        a {
+                            color: $secondary-color;
+                        }
+                    }
+                }
+     
+            }
+    
+            p {
+                @extend %text-clamp-3;
+            }
+        }
+
+        &-thumb {
+            @extend %p-rel, %of-hidden;
+            border-radius: 8px;
+    
+            img {
+                @extend %w-100;
+                @include add-prefix(transition, $transition);
+            }
+            &::after {
+                @extend %p-abs;
+                @include add-prefix(transition, $transition);
+                content: "";
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: $secondary-color;
+                opacity: 0;
+              }
+    
+            &:hover, 
+            &.active{
+                .case-studies__buttons {
+                    transform: scale(1, 1);
+                    opacity: 1;
+                    visibility: visible;
+                    z-index: 1;
+                }
+    
+                &::after {
+                    opacity: .5;
+                }
+            }
+        }
+    }
+
+
+    &__content{
+        @extend %p-rel;
+        z-index: 1;
+    }
+
+    
+    &__buttons {
+        @extend %p-abs,
+        %justify-center,
+        %align-i-center;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        transform: scale(1, 0);
+        opacity: 1;
+        // visibility: hidden;
+        transform-origin: bottom center;
+        transition: 500ms ease;
+    
+    
+        &-item {
+          padding: 10px 38px;
+          background-color: $brand-color;
+          text-align: center;
+          text-decoration: none;
+        }
+    }
+
+
+    &__meta {
+        
+        &-tag {
+            @extend %d-inline-block,
+            %text-semibold;
+            @include font-size(14px);
+            border-radius: 8px;
+            text-transform: capitalize;
+            margin-bottom: 8px;
+
+            &--style1 {
+                color: $secondary-color;
+            }
+        }
+    }
+
+}

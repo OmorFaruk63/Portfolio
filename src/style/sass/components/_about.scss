@@ -1,0 +1,423 @@
+.about {
+    @extend %p-rel,
+    %of-hidden;
+
+    &--style1 {
+        background-color:hsla(60,2%,7%,1);
+        background-image:
+        radial-gradient(at 0% 48%, hsla(72,34%,11%,1) 0px, transparent 50%),
+        radial-gradient(at 99% 43%, hsla(72,34%,11%,1) 0px, transparent 50%);
+        .about{
+            &__thumb {
+                @extend %p-rel;
+                z-index: 1;
+                
+                &-image {
+                    @extend %p-rel;
+        
+                    img {
+                        @extend %p-rel;
+                        border-radius: 20px;
+                    }
+                        &::after {
+                        position: absolute;
+                        content: "";
+                        top: 60%;
+                        left: 50%;
+                        height: 300px;
+                        width: 300px;
+                        backdrop-filter: blur(50px);
+                        filter: blur(70px);
+                        background-color: $brand-color;
+                        transform: translate(-50%, -50%);
+                        opacity: .3;
+                        z-index: -1;
+                    }
+                }
+        
+                
+            }
+        
+            &__content {
+                @extend %p-rel;
+                border-radius: 10px !important;
+                background-color: $bg-color;
+                padding: 3rem 1.5rem;
+                z-index: 99;
+        
+                @include breakpoint(lg) {
+                    margin-block-start: 0;
+                }
+
+                @include breakpoint(xl) {
+                    padding: 3rem;
+                }
+                
+                
+        
+                &:not(:last-child) {
+                    @extend %mb-30;
+        
+                    @include breakpoint(xl) {
+                        margin-bottom: 32px;
+                    }
+                }
+
+
+        
+                &-inner {
+                    max-width: 50ch;
+                    margin-block: 10px 40px;
+                }
+        
+        
+        
+        
+                &--style2 {
+                    .about {
+                        &__content {
+        
+                            &-details {
+                                flex: 1;
+        
+                                h5 {
+                                    @extend %text-capitalize,
+                                    %mb-0;
+                                }
+                            }
+        
+                            &-inner {
+                                @extend %d-flex;
+                                gap: 15px;
+        
+                                h2 {
+                                    @extend %text-capitalize;
+                                    margin-block-end: -10px;
+        
+                                    span {
+                                        color: $secondary-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+        
+                }
+            }
+        
+            &__icon {
+                width: 70px;
+        
+                &-inner {
+                    @extend %text-center,
+                    %d-grid,
+                    %place-i-center;
+                    @include box(70px);
+                    background-color: $bg-color-3;
+                    border-radius: 50%;
+                }
+            }
+
+            &__shape {
+
+                &-item {
+                    @extend %p-abs;
+        
+                    &--1 {
+                        display: none;
+                        right: 10px;
+                        z-index: 9;
+                        top: 10px;
+                        opacity: .6;
+                        @include animation(rotate 6s cubic-bezier(0.41, 0.15, 0.64, 0.86) infinite alternate);
+        
+        
+                        @include breakpoint(lg) {
+                            display: block;
+                            top: 60px;
+                            right: 30px;
+                        }
+
+                        @include breakpoint(xxl) {
+                            right:100px;
+                        }
+        
+        
+        
+                        img{
+                            width: 30%;
+        
+                            @include breakpoint(lg){
+                                width: 40px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &--style2 {
+        background-color:hsla(0,0%,10%,1);
+        background-image:
+        radial-gradient(at 100% 0%, hsla(71,86%,51%,0.21) 0px, transparent 50%),
+        radial-gradient(at 60% 100%, hsla(28,0%,10%,1) 0px, transparent 50%);
+        
+        .about {
+            
+            &__thumb {
+                @extend %p-rel;
+                z-index: 1;
+                
+                &-image {
+                    @extend %p-rel;
+        
+                    img {
+                        @extend %p-rel;
+                        border-radius: 20px;
+                    }
+        
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        top: 60%;
+                        left: 50%;
+                        height: 200px;
+                        width: 200px;
+                        backdrop-filter: blur(10px);
+                        filter: blur(70px);
+                        background-color: $brand-color;
+                        transform: translate(-50%, -50%);
+                        z-index: -1;
+                    }
+                }
+
+                .circle{
+                    @extend %p-abs;
+                    top: 38px;
+                    right: -5px;
+                    background-color: $bg-color-4;
+
+
+                    @include breakpoint(sm){
+                        top: 0;
+                        right: -20px;
+                    }
+
+                    @include breakpoint(md){
+                        top: 0;
+                        right: 100px;
+                    }
+
+                    @include breakpoint(md){
+                        top: 0;
+                        right: -30px;
+                    }
+                }
+            }
+
+            &__content {
+                @extend %p-rel;
+                z-index: 2;
+                &-icon {
+                    @extend %mb-30;
+
+                    img {
+                        width: 70px;
+                        @include animation(left-right 3s cubic-bezier(0.41, 0.15, 0.64, 0.86) infinite alternate);
+
+                        @include breakpoint (sm) {
+                            width: 73px;
+                        }
+
+                        @include breakpoint (md) {
+                            width: 70px;
+                        }
+
+                        @include breakpoint (lg) {
+                            width: 90px;
+                        }
+
+                        @include breakpoint (xl) {
+                            width: auto;
+                        }
+                    }
+                }
+
+                h2 {
+                    @extend %text-capitalize;
+                    line-height: 1.2;
+
+                    span {
+                        color: $secondary-color;
+                    }
+                }
+
+                p {
+                    color: $text-color;
+                    max-width: 60ch !important;
+                }
+
+                a {
+                    @extend %mt-0;
+                }
+
+                .contact-info{
+                    @extend %d-flex;
+                    gap: 16px;
+
+                    @include breakpoint(xl){
+                        gap: 32px;
+                    }
+                }
+            }
+
+            &__shape {
+
+                &-item {
+                    @extend %p-abs;
+        
+                    &--1 {
+                        display: none;
+                        left: 10px;
+                        z-index: 9;
+                        top: -10px;
+                        @include animation(rotate 6s cubic-bezier(0.41, 0.15, 0.64, 0.86) infinite alternate);
+        
+        
+                        @include breakpoint(lg) {
+                            display: block;
+                            top: -30px;
+                            left: -30px;
+                        }
+
+
+                        &::after{
+                            @extend %p-abs;
+                            content: "";
+                            background-color: $brand-color;
+                            width: 200px;
+                            height: 200px;
+                            top: 0;
+                            left: 0;
+                            z-index: 0;
+                            filter: blur(100px);
+                            opacity: .2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &--style3{
+        background-color:hsla(60,2%,6%,1);
+        background-image:
+        radial-gradient(at 100% 0%, hsla(71,86%,51%,0.16) 0px, transparent 50%),
+        radial-gradient(at 0% 0%, hsla(71,86%,51%,0.15) 0px, transparent 50%);
+    }
+
+    &__info{
+        
+        padding: 24px;
+        border-radius: 12px;
+        background-color: $bg-color;
+        transition: $transition;
+
+
+        h3{
+            color: transparent;
+            -webkit-text-stroke: 1px $brand-color;
+            margin-bottom: 8px;
+        }
+    }
+
+
+
+    &__shape {
+        &--style1 {
+            .about__shape {
+                &-item {
+                    display: none;
+                    @extend %p-abs;
+                    width: 40px;
+                    top: 5%;
+                    right: 6%;
+                    @include animation(rotate 3s cubic-bezier(0.41, 0.15, 0.64, 0.86) infinite alternate);
+
+                    @include breakpoint(sm) {
+                        top: 5%;
+                        right: 7%;
+                    }
+
+                    @include breakpoint(md) {
+                        width: auto;
+                        top: 6%;
+                        right: 6%;
+                    }
+
+                    @include breakpoint(lg) {
+                        right: 5%;
+                        top: 16%;
+                    }
+
+                    @include breakpoint(xl) {
+                        top: 16%;
+                        right: 6%;
+                    }
+
+                    @include breakpoint(xxl) {
+                        top: 16%;
+                        right: 9%;
+                    }
+                }
+            }
+        }
+
+        &--style2 {
+            .about__shape {
+                &-item {
+                    @extend %p-abs;
+
+                    &--1 {
+                        width: 80px;
+                        top: 52%;
+                        right: 71%;
+                        @include animation(floating 3s cubic-bezier(0.41, 0.15, 0.64, 0.86) infinite alternate);
+
+                        @include breakpoint(sm) {
+                            width: auto;
+                            top: 45%;
+                            right: 71%;
+                        }
+
+                        @include breakpoint(md) {
+                            top: 45%;
+                            right: 77%;
+                        }
+
+                        @include breakpoint(lg) {
+                            right: 43%;
+                            top: 8%;
+                        }
+
+                        @include breakpoint(xl) {
+                            top: 3%;
+                            right: 40%;
+                        }
+
+                        @include breakpoint(xxl) {
+                            top: -1%;
+                            right: 3%;
+                        }
+
+                        @include breakpoint(xxxl) {
+                            top: 0%;
+                            right: 9%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

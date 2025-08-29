@@ -1,0 +1,73 @@
+.comment {
+    &__head {
+        @extend %d-flex,
+        %align-i-center,
+        %justify-between;
+    }
+
+    &__author {
+        @extend %d-flex,
+        %align-i-center;
+        gap: 15px;
+
+        &-info {
+            h6 {
+                @extend %mb-10,
+                %text-semibold;
+                line-height: 1.3;
+            }
+
+            span {
+                @include font-size(14px);
+                color: $text-color;
+            }
+        }
+        &-thumb{
+            img{
+                border-radius: 99px;
+            }
+        }
+    }
+
+    &__action {
+        a {
+            @extend %text-capitalize, %text-medium;
+            @include add-prefix(transition, $transition);
+            background-color: $brand-color;
+            border-radius: 4px;
+            font-family: $title-font;
+            color: $body-color;
+            padding: 6px 12px;
+            @include font-size(16px);
+
+            span{
+                i,svg {
+                    font-size: 14px;
+                    transition: $transition;
+                }
+            }
+
+            
+
+            &:hover {
+                i,svg {
+                    transform: translateX(-3px);
+                    filter: hue-rotate(3deg);
+                }
+            }
+        }
+    }
+
+    &__body{
+        &-inner{ 
+            padding-block: 16px;   
+            p {
+                color: $title-color;
+            }
+        }
+    }
+}
+
+.border-top{  
+    border-top: 1px solid$border-color !important;
+}

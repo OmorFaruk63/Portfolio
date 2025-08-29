@@ -1,0 +1,47 @@
+.accordion {
+  &-button {
+    @extend %p-rel;
+    background-color: transparent;
+    padding-block: 1.5rem;
+    padding-inline: 2rem;
+    z-index: 2;
+    flex: 1;
+    &:focus{
+      border-color: none !important;
+      box-shadow: none !important;
+    }
+
+    &::after{
+      display: none;
+    }
+
+    span {
+      font-size: $fs-h4;
+      font-weight: 700;
+      color: $title-color;
+    }
+
+    &:not(.collapsed) {
+      background-color: transparent;
+      box-shadow: none;
+      border-color: var(--color-border-active);
+
+      &::after {
+        display: none;
+        background-image: none !important;
+      }
+    }
+
+  }
+
+
+  &-body {
+    padding-inline: 2rem;
+    p{
+      margin-bottom: 24px;
+    }
+  }
+
+
+
+}

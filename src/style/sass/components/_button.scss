@@ -1,0 +1,266 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+.trk-btn {
+  @extend %d-inline-block,
+  %p-rel,
+  %of-hidden,
+  %text-medium;
+  border-radius: 8px;
+  padding: 10px 20px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  transition: $transition;
+  outline: none;
+
+  @include breakpoint(lg){
+    font-size: 16px;
+    padding: 15px 30px;
+  }
+
+  &--primary,
+  &--outline,
+  &--outline2{
+    background-color: $brand-color;
+    color:$black-color;
+    z-index: 1;
+
+    &::after{
+      @extend %p-abs;
+      content: "";
+      width: 0;
+      height: 100%;
+      top: 0;
+      right: 0;
+      z-index: -1;
+      background-color: $secondary-color;
+      transition: $transition;
+    }
+  }
+
+  span{
+    svg,i{
+      margin-inline-start: 8px;
+    }
+  }
+
+
+  &--outline,
+  &--outline2{
+    background-color: transparent;
+    border: 1px solid $brand-color;
+    color: $brand-color;
+
+    &::after{
+      background-color: $brand-color;
+    }
+  }
+
+  &--outline2{
+    border-color: $title-color !important;
+    color: $title-color;
+
+    &::after{
+      background-color: $title-color !important;
+    }
+  }
+
+
+  &--primary2{
+    background-color: $brand-color;
+    color:$title-color;
+    z-index: 1;
+
+    &::after{
+      @extend %p-abs;
+      content: "";
+      width: 100%;
+      height: 0;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background-color: $secondary-color;
+      transition: $transition;
+    }
+  }
+
+
+  &--secondary{
+    background-color: $secondary-color;
+    color:$title-color;
+    z-index: 1;
+
+    &::after{
+      @extend %p-abs;
+      content: "";
+      width: 0;
+      height: 100%;
+      top: 0;
+      right: 0;
+      z-index: -1;
+      background-color: $brand-color;
+      transition: $transition;
+    }
+  }
+
+
+  &--secondary2{
+    background-color: $secondary-color;
+    color:$title-color;
+    z-index: 1;
+
+    &::after{
+      @extend %p-abs;
+      content: "";
+      width: 100%;
+      height: 0;
+      top: 0;
+      right: 0;
+      z-index: -1;
+      background-color: $brand-color;
+      transition: $transition;
+    }
+  }
+
+  &:hover, 
+  &.active{
+    &.trk-btn{
+        &--primary,
+        &--outline,
+        &--outline2{
+          color: $title-color;
+
+          &::after {
+            left: 0;
+            width: 100%;
+          }
+        }
+
+        &--outline,
+        &--outline2{
+          color: $black-color;
+        }
+
+        &--primary2{
+          color: $title-color;
+
+          &::after {
+            top: auto;
+            bottom: 0;
+            height: 100%;
+          }
+        }
+
+        &--secondary{
+          color: $title-color;
+
+          &::after{
+            left: auto;
+            width: 100%;
+          }
+        }
+
+        &--secondary2{
+          color: $title-color;
+
+          &::after{
+            top: auto;
+            bottom: 0;
+            height: 100%;
+          }
+        }
+
+
+    }
+  }
+}
+
+.text-btn {
+  @extend %align-i-center,
+  %p-rel,
+  %text-capitalize;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  @include add-prefix(transition, $transition);
+  display: inline-flex;
+  font-weight: 600;
+  color: $brand-color;
+
+
+  &:hover {
+    color: $secondary-color;
+  }
+}
+
+
+.btn-group {
+  @extend %d-flex,
+  %align-i-center;
+  gap: 32px;
+
+  &--gap-xs {
+    gap: 20px;
+  }
+
+  &--gap-sm {
+    gap: 20px;
+  }
+
+  &--gap-md {
+    gap: 20px;
+  }
+
+  &--gap-lg {
+    gap: 20px;
+  }
+}
+
+
+
+.play-btn{
+  @extend %d-flex,
+  %align-i-center,
+  %text-medium;
+  cursor: pointer;
+  gap: 10px;
+  padding: 0;
+  color: $title-color;
+  font-family: $text-font;
+
+  .play-icon{
+  @extend %d-grid,
+  %place-i-center;
+  @include box(48px);
+  background-color: $secondary-color !important;
+  border-radius: 50%;
+  transition: $transition;
+
+  @include breakpoint(lg){
+    @include box(56px);
+  }
+
+  i,svg{
+    color: $title-color;
+    font-size: 18px;
+  }
+
+  &--style2{
+    background-color: $bg-color-2 !important;
+
+    i,svg{
+      color: $secondary-color;
+    }
+  }
+  }
+
+  &:hover{
+    .play-icon{
+      background-color:$brand-color !important;
+
+      i,svg{
+        color: $body-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.project-details {
+    @extend  %of-hidden;
+    &__item {
+        &-inner {
+            @extend %p-30;
+            background-color: $bg-color;
+            box-shadow: 0px -16px 48px rgba(6, 35, 63, 0.03), 0px 16px 48px rgba(6, 35, 63, 0.03);
+            border-radius: 12px;
+
+            @include breakpoint(md){
+                padding: 48px
+            }
+        }
+    }
+    &__thumb{
+        &-inner{
+            img{
+                border-radius: 8px;
+            }
+        }
+    }
+
+    &__content{
+        h2{
+            font-weight: 700;
+        }
+    }
+
+    &__feature{
+      &-thumb{
+        img{
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    &__meta{
+      color: $secondary-color;
+    }
+}

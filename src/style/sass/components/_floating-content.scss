@@ -1,0 +1,279 @@
+.floating-content {
+    &__item {
+        @extend %of-hidden,
+        %py-15,
+        %px-15;
+
+        border: 1px solid $floating-content-border-color;
+        box-shadow: -40px 40px 60px 0px rgba(5, 30, 54, 0.05);
+        border-radius: 16px;
+
+        @include breakpoint(md) {
+            padding: 14px 16px;
+        }
+
+        h3 {
+            @extend %mb-0,
+            %text-bold;
+
+            &.style2 {
+                color: $brand-color;
+            }
+        }
+
+        p {
+            @extend %mb-0,
+            %text-regular;
+
+            &.style2 {
+                @extend %text-bold;
+                @include font-size(18px);
+            }
+        }
+ 
+    }
+
+    &__bottom {
+        &-left {
+            @extend %p-abs;
+            left: -5px;
+            bottom: 0;
+            background-color: $bg-color-3;
+            border-radius: 8px;
+
+            h3{
+                color: $brand-color;
+            }
+
+
+            @include breakpoint(md) {
+                left: 30px;
+                bottom: 15px;
+            }
+
+            @include breakpoint(lg) {
+                left: 0px;
+                bottom: 15px;
+            }
+
+            @include breakpoint(xl) {
+                left: -15px;
+                bottom: -60px;
+            }
+
+            @include breakpoint(xxl) {
+                left: -55px;
+                bottom: -60px;
+            }
+
+
+            &::after {
+                @extend %p-abs;
+                content: url(/images/icon/shape/diamond-star-group.svg);
+                top: -30px;
+                right: 10px;
+            }
+
+
+        }
+
+        &-right {
+            @extend %p-abs;
+            right: 0px;
+            top: 0px;
+
+            @include breakpoint(sm) {
+                @include breakpoint(max-md) {
+                    right: -20px;
+                    top: 5px;
+                }
+            }
+
+            @include breakpoint(md) {
+                @include breakpoint(max-lg) {
+                    right: 60px;
+                    top: -50px;
+                }
+            }
+
+            @include breakpoint(lg) {
+                right: -10px;
+                top: -80px;
+            }
+
+            &--style2 {
+
+                @include breakpoint(md) {
+                    right: -20px;
+                    top: -80px;
+
+                    img {
+                        max-width: 70px;
+                    }
+                }
+
+                @include breakpoint(lg) {
+                    right: 0px;
+                    top: -80px;
+
+                    img {
+                        max-width: 80px;
+                    }
+                }
+
+                @include breakpoint(xl) {
+                    right: 5px;
+                    top: -55px;
+
+                    img {
+                        width: auto;
+                    }
+                }
+
+                @include breakpoint(xxl) {
+                    right: -70px;
+                    top: -55px;
+                }
+            }
+
+            &--style3 {
+
+                right: 10px;
+                top: 20px;
+
+                @include breakpoint(sm) {
+                    @include breakpoint(max-md) {
+                        right: 20px;
+                        top: 20px;
+                    }
+                }
+
+                @include breakpoint(md) {
+                    @include breakpoint(max-lg) {
+                        right: 15px;
+                        top: -60px;
+                    }
+                }
+
+                @include breakpoint(lg) {
+                    right: 10px;
+                    top: 20px;
+                }
+
+                @include breakpoint(xl) {
+                    right: 70px;
+                    top: 20px;
+                }
+            }
+        }
+    }
+
+    &__left {
+        &-top {
+            @extend %p-abs;
+            left: -10px;
+            top: -47px;
+
+            &--style2 {
+                left: -10px;
+                top: -40px;
+            }
+
+            @include breakpoint(sm) {
+                left: -27px;
+                top: -44px;
+            }
+
+            @include breakpoint(md) {
+                left: -27px;
+                top: -125px;
+            }
+
+            @include breakpoint(lg) {
+                left: -45px;
+                top: -80px;
+            }
+        }
+    }
+
+    &__top {
+        &-left {
+            @extend %p-abs;
+            left: 10px;
+            top: 250px;
+            background-color: $secondary-color;
+            color: $title-color;
+            border-radius: 8px;
+
+            
+
+            @include breakpoint(sm) {
+                left: 10px;
+                top: 400px;
+            }
+
+            @include breakpoint(md) {
+                left: 40px;
+                top: 400px;
+            }
+
+            @include breakpoint(lg) {
+                left: 20px;
+                top: 220px;
+            }
+
+            @include breakpoint(xl) {
+                top: 320px;
+            }
+
+            @include breakpoint(xxl) {
+                left: -40px;
+                top: 320px;
+            }
+
+            
+        }
+
+        &-right {
+            @extend %p-abs;
+            right: 10px;
+            top: 180px;
+            background-color: $secondary-color;
+            color: $title-color;
+            border-radius: 8px;
+
+            
+
+            &::after {
+                @extend %p-abs;
+                content: url(/images/icon/shape/victory.svg);
+                top: -30px;
+                right: 10px;
+            }
+
+            @include breakpoint(sm) {
+                right: 10px;
+                top: 60px;
+            }
+
+            @include breakpoint(md) {
+                right: 70px;
+                top: 75px;
+            }
+
+            @include breakpoint(lg) {
+                right: -45px;
+                top: 150px;
+            }
+
+            @include breakpoint(xl) {
+                right: -40px;
+                top: 250px;
+            }
+        }
+    }
+
+
+
+
+}

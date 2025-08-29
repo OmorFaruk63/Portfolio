@@ -1,0 +1,613 @@
+// background image use 
+.bg-image {
+    background-repeat: no-repeat;
+}
+
+.of-hidden {
+    overflow: hidden;
+}
+
+
+
+
+//  --------------  >>> section header style start here <<< ------------- //
+.section-header {
+    padding-bottom: 32px;
+
+    @include breakpoint(lg) {
+        padding-bottom: 48px
+    }
+
+    .subtitle {
+        @include font-size(20px);
+        font-weight: 500;
+        color: $secondary-color;
+        margin-bottom: 10px;
+
+        span {
+            margin-inline-end: 8px;
+        }
+    }
+
+    h2 {
+        @extend %text-capitalize,
+        %mb-20;
+
+        span {
+            color: $brand-color;
+
+            &.style2 {
+                color: $brand-color;
+            }
+        }
+    }
+
+    p {
+        @extend %mt-20,
+        %mb-0;
+        max-inline-size: 46ch;
+    }
+
+    &--style2 {
+        .subtitle {
+            img {
+                padding-bottom: 5px !important;
+            }
+        }
+
+        h2 {
+            span {
+                color: $title-color !important;
+                text-decoration: underline;
+                text-decoration-color: $secondary-color;
+                text-underline-offset: 16px;
+                text-decoration-thickness: 3px;
+            }
+        }
+    }
+
+    &--max20 {
+        h2 {
+            max-inline-size: 20ch;
+        }
+    }
+
+    &--max25 {
+        h2 {
+            max-inline-size: 25ch;
+        }
+    }
+
+    &--max50 {
+        p {
+            max-inline-size: 50ch;
+        }
+    }
+
+    &--max60 {
+        p {
+            max-inline-size: 50ch;
+        }
+    }
+
+    &--pb32 {
+        &.section-header {
+            padding-bottom: 32px !important;
+        }
+    }
+}
+
+//  --------------  >>> contact info header style start here <<< ------------- //
+.contact-info {
+    &__item {
+        @extend %d-flex,
+        %align-i-center;
+        gap: 1rem;
+
+        &-thumb {
+            @extend %d-grid,
+            %place-i-center;
+            @include box(48px);
+            border-radius: 99px;
+            background-color: $bg-color-2;
+
+            &--style2 {
+                background-color: $secondary-color;
+                outline: 2px solid $secondary-color;
+                outline-offset: 4px;
+            }
+        }
+
+        &-content {
+            p {
+                @extend %mb-5;
+            }
+        }
+    }
+}
+
+
+
+//  --------------  >>> section bg grid pattern style start here <<< ------------- //
+.bg-grid {
+    @extend %p-rel;
+    background-size: 100px 100px;
+    width: 100%;
+    height: 100%;
+
+    &::after {
+        @extend %p-abs;
+        content: "";
+        background-color: $body-color;
+        background-image: linear-gradient(#c4ef171e 0.8px, transparent 0.8px), linear-gradient(to right, #c4ef171e 0.8px, #0c0f0000 0.8px);
+        background-size: 100px 100px;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: .4;
+        z-index: -2;
+
+    }
+}
+
+//  --------------  >>> section bg grid pattern style end here <<< ------------- //
+
+
+
+//  --------------  >>> section bg overlay style start here <<< ------------- //
+.overlay {
+    @extend %p-abs;
+    @include box(390px);
+    border-radius: 50%;
+    background-color: rgba($color: #c4ef17, $alpha: 0.2);
+    filter: blur(100px);
+    z-index: -1;
+
+    &--grid {
+        @extend %p-rel;
+        background-color: $secondary-color;
+        z-index: 0;
+
+        &::after {
+            @extend %p-abs;
+            content: "";
+            background-color: red;
+            background-image: linear-gradient(#c4ef171e 0.8px, transparent 0.8px), linear-gradient(to right, #c4ef171e 0.8px, #0c0f0000 0.8px);
+            background-size: 100px 100px;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 99;
+
+        }
+    }
+
+    &--top-left {
+        top: -10%;
+        left: -10%;
+    }
+
+    &--top-right {
+        top: -10%;
+        right: -10%;
+    }
+
+    &--bottom-left {
+        bottom: -10%;
+        left: -10%;
+    }
+
+    &--bottom-right {
+        bottom: -10%;
+        right: -10%;
+    }
+
+    &-blue--bottom-right {
+        bottom: -10%;
+        background-color: rgba($color: #6b7fff, $alpha: 0.2);
+        right: -10%;
+    }
+
+    &--top-center {
+        @include box(500px);
+        top: -50%;
+        left: calc(55% - 390px);
+    }
+
+    &--top30-center {
+        @include box(500px);
+        top: -30%;
+        left: calc(55% - 390px);
+    }
+
+    &--bottom-center {
+        @include box(500px);
+        bottom: -50%;
+        left: calc(55% - 390px);
+    }
+
+    &--left-center {
+        @include box(500px);
+        top: calc(50% - 250px);
+        left: -15%;
+    }
+
+    &--right-center {
+        @include box(500px);
+        top: calc(50% - 250px);
+        right: -15%;
+    }
+
+    &-dark--center-center {
+        @include box(500px);
+        top: calc(50% - 250px);
+        right: -15%;
+        background-color: rgba($color: #020202, $alpha: 0.2);
+    }
+
+}
+
+//  --------------  >>> section bg overlay style end here <<< ------------- //
+
+
+
+//  --------------  >>>  bg blur style start here <<< ------------- //
+.bg-blur {
+    @extend %p-rel;
+
+    &::after {
+        @extend %p-abs;
+        content: "";
+        background-color: $body-color;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 99px;
+        backdrop-filter: blur(50px);
+        z-index: -1;
+    }
+}
+
+//  --------------  >>>  bg blur style end here <<< ------------- //
+
+
+
+
+//  --------------  >>> circle text rounded style end here <<< ------------- //
+.circle {
+    @extend %d-grid,
+    %place-i-center,
+    %p-rel;
+    @include box(120px);
+
+    border-radius: 50%;
+    background-color: $bg-color-2;
+
+    @include breakpoint(lg) {
+        @include box(150px);
+    }
+
+    h2 {
+        color: $brand-color;
+    }
+
+    .text {
+        @extend %p-abs, %w-100, %h-100;
+        @include animation(rotate 8s cubic-bezier(0.41, 0.15, 0.64, 0.86) infinite);
+
+        color: $title-color;
+
+        span {
+            @extend %p-abs;
+            left: 50%;
+            top: 4px;
+            font-size: 12px;
+            transform-origin: 0 56px;
+
+            @include breakpoint(lg) {
+                left: 50%;
+                top: 5px;
+                font-size: 14px;
+                transform-origin: 0 70px;
+            }
+        }
+    }
+
+    &-playbtn {
+        @extend %d-flex,
+        %align-i-center,
+        %text-medium;
+        gap: 10px;
+        padding: 0;
+        color: $title-color;
+        font-family: $text-font;
+
+
+        .play-icon {
+            @extend %d-grid,
+            %place-i-center;
+            @include box(48px);
+            background-color: $brand-color !important;
+            border-radius: 50%;
+            transition: $transition ;
+
+            @include breakpoint(lg) {
+                @include box(56px);
+            }
+
+            i,
+            svg {
+                color: $black-color;
+                font-size: 18px;
+            }
+        }
+
+        &:hover {
+            .play-icon {
+                background-color: $secondary-color !important;
+
+                i,
+                svg {
+                    color: $title-color;
+                }
+            }
+        }
+    }
+
+
+}
+
+//  --------------  >>> circle text rounded style end here <<< ------------- //
+
+
+
+// scrollTop
+.scrollToTop {
+    @include add-prefix(transition, $transition);
+    position: fixed;
+    bottom: 5% !important;
+    right: 5% !important;
+    z-index: 99 !important;
+    width: 40px !important;
+    height: 40px !important;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px !important;
+    color: $black-color;
+
+    &--style1 {
+        background-color: $brand-color !important;
+    }
+
+    &:hover {
+        @include add-prefix (transform, translateY(-5px));
+        color: $black-color;
+    }
+
+}
+
+
+
+
+// password show hide toggle
+.form-pass {
+    @extend %p-rel;
+
+    &__ctoggle,
+    &__toggle {
+        @extend %p-abs;
+        background: none;
+        border: none;
+        color: $text-color;
+        font-weight: 600;
+        right: .75em;
+        top: 53px;
+        z-index: 9;
+    }
+}
+
+
+// swiper nav
+.swiper-nav {
+    @extend %d-flex,
+    %align-i-center;
+    gap: 24px;
+
+    @include breakpoint(max-md) {
+        margin-block-start: 15px;
+    }
+
+
+    &__btn {
+        @extend %d-grid,
+        %place-i-center;
+        @include box(40px);
+        @include add-prefix(transition, $transition);
+        border: none;
+        border-radius: 99px;
+        background-color: $bg-color-3;
+
+        @include breakpoint(sm) {
+            @include box(46px);
+        }
+
+        i,
+        svg {
+            @extend %text-bold;
+            @include font-size(18px);
+            @include add-prefix(transition, $transition);
+            color: $title-color;
+        }
+
+        &.active,
+        &:hover {
+            background-color: $brand-color;
+            border-color: $brand-color;
+
+            i,
+            svg {
+                color: $black-color;
+            }
+        }
+
+
+        &--style2 {
+            @extend %border;
+        }
+    }
+}
+
+
+.swiper-btn-group {
+    @extend %d-inline;
+    flex-wrap: nowrap;
+    margin-top: 3rem;
+    border-radius: 99px;
+    background-color: $bg-color-2;
+    padding: 8px;
+    width: fit-content;
+    height: fit-content;
+}
+
+
+
+
+// progress bar
+
+.progress {
+    @extend %mt-15;
+
+    &-bar {
+        background-color: #5370FF !important;
+
+        &--style2 {
+            background-color: #6084E0 !important;
+
+        }
+    }
+}
+
+
+
+
+// pagination start here
+.paginations {
+    box-shadow: 0px -16px 48px rgba(6, 35, 63, 0.03), 0px 16px 48px rgba(6, 35, 63, 0.03);
+    margin: 0 auto;
+    margin-top: 40px;
+
+
+    ul {
+        li {
+            @extend %px-5;
+
+            a {
+                @extend %p-rel,
+                %d-flex,
+                %text-regular,
+                %align-i-center,
+                %justify-center;
+                @include add-prefix(transition, $transition);
+                @include font-size(16px);
+                border: 1px solid $border-color;
+                border-radius: 4px;
+                padding: 4px 12px;
+                color: $text-color;
+                opacity: 0.5;
+
+                &.active,
+                &:hover {
+                    opacity: 1;
+                    color: $brand-color;
+
+                    i,
+                    svg {
+                        color: $brand-color;
+                    }
+                }
+            }
+
+            &:not(:first-child, :last-child) {
+                a {
+                    @extend %p-rel,
+                    %d-flex,
+                    %text-bold,
+                    %align-i-center,
+                    %justify-center;
+                    @include add-prefix(transition, $transition);
+                    width: 36px;
+                    height: 36px;
+                    padding: 0;
+                    background: $bg-color;
+                    color: $title-color;
+                    z-index: 1;
+                    border-radius: 99px;
+                    opacity: 1;
+
+                    &.active,
+                    &:hover {
+                        border: none;
+                        background-color: $brand-color;
+                        color: $body-color;
+                    }
+
+                    &.dot {
+                        color: $brand-color;
+                        font-weight: 700;
+
+                        &:hover {
+                            color: $brand-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+//five star
+.five-star {
+    @extend %d-flex;
+    color: $yellow-color;
+    gap: 3px;
+    font-size: 20px;
+
+}
+
+//gradient border
+.gradient-border {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: inherit; // Inherit border-radius
+        padding: 1px; // Adjust to match the border thickness
+        background: linear-gradient(120deg, rgba(#6B7FFF, 0.5), rgba(#C4EF17, 0.8));
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        z-index: 0;
+        transition: all .3s ease-in-out;
+        opacity: .1;
+    }
+
+    &:hover,
+    &.active {
+        &::after {
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,179 @@
+ .contact {
+     @extend %p-rel,
+     %of-hidden;
+
+     &__wrapper {
+         @extend %p-rel;
+         z-index: 2;
+     }
+
+     &__social {
+         @extend %mb-60;
+
+         h3 {
+             @extend %text-capitalize,
+             %mb-40;
+             max-inline-size: 15ch;
+
+
+             span {
+                 color: $secondary-color;
+             }
+         }
+     }
+
+     &__counter{
+        h3{
+            color: $brand-color;
+        }
+        margin-bottom: 48px;
+     }
+
+     &__item {
+
+         &-inner {
+             @extend %d-flex,
+             %align-i-center;
+             gap: 16px;
+             padding-block-end: 56px;
+
+         }
+
+         &-whatsapp{
+            a{
+                font-size: $fs-h5;
+                font-weight: 700;
+                color: $title-color;
+
+                span{
+                    margin-inline-end: 12px;
+                }
+            }
+         }
+
+
+         &-content {
+             p {
+                 @extend %mb-0,
+                 %text-semibold;
+             }
+         }
+     }
+
+    &__form {
+        @extend %p-rel;
+        background-color: $body-color;
+        border-radius: 1rem;
+        padding: 32px;
+
+        @include breakpoint(xl){
+            padding: 48px;
+        }
+        
+         textarea {
+             min-height: 120px;
+         }
+
+         .trk-btn{
+            margin-top: 48px;
+            padding-block: 16px;
+            border: none;
+         }
+
+         form{
+            @extend %p-rel;
+            z-index: 2;
+         }
+
+     }
+
+     &__map {
+        @extend %w-100, %h-100;
+        position: relative;
+        overflow: hidden;
+        
+        .map {
+          width: 100%;
+          height: 300px;
+
+          @include breakpoint (lg){
+            height: 500px;
+          }
+          filter: 
+            invert(90%)    
+            hue-rotate(180deg) 
+            grayscale(70%)       
+            brightness(80%)      
+            contrast(110%);      
+        }
+        
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(23, 25, 35, 0.1);
+          pointer-events: none;
+        }
+      }
+
+     &__shape {
+         &-item {
+             @extend %p-abs;
+
+             &--1 {
+                display: none;
+                 z-index: 0;
+                 @include animation(rotate 8s cubic-bezier(0.41, 0.15, 0.64, 0.86) infinite alternate);
+
+                 @include breakpoint(xl) {
+                    display: block;
+                     top: 16%;
+                     left: 40%;
+                 }
+
+                 @include breakpoint(xxl) {
+                     top: 20%;
+                     left: 36%;
+                 }
+                 @include breakpoint(xxxl) {
+                     top: 25%;
+                     left: 47%;
+                 }
+             }
+
+             &--2 {
+                bottom: 5%;
+                left: 10%;
+                z-index: 0;
+                @include animation(left-right 3s cubic-bezier(0.41, 0.15, 0.64, 0.86) infinite alternate);
+
+                @include breakpoint(lg) {
+                    bottom: 10%;
+                    left: 10%;
+                }
+
+                @include breakpoint(xl) {
+                    bottom: 10%;
+                    left: 10%;
+                }
+                @include breakpoint(xxl) {
+                    bottom: 10%;
+                    left: 25%;
+                }
+
+                img{
+                    width: 200px;
+                    @include breakpoint(xl){
+                        width: 350px;
+                    }
+                }
+
+             }
+         }
+     }
+
+
+ }

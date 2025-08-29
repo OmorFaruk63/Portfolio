@@ -1,0 +1,316 @@
+.footer {
+    @extend %of-hidden,
+    %p-rel;
+
+    &__wrapper {
+        @extend %p-rel;
+        z-index: 2;
+    }
+
+    &__top {
+        @extend %of-hidden,
+        %p-rel;
+        @include breakpoint(sm) {
+            margin-block-end: 0;
+        }
+
+        &--style1 {
+            padding-block: 80px;
+
+            @include breakpoint(sm) {
+                padding-block: 90px;
+            }
+
+            @include breakpoint(lg) {
+                padding-block: 100px;
+            }
+        }
+
+        &--style2 {
+            padding-top: 200px;
+            padding-block-end: 80px;
+
+            @include breakpoint(sm) {
+                padding-block-start: 250px;
+                padding-block-end: 90px;
+            }
+
+            @include breakpoint(lg) {
+                padding-block-start: 332px;
+                padding-block-end: 100px;
+            }
+        }
+    }
+
+
+
+    &__about {
+        &-logo {
+            img {
+                @extend %mb-20;
+            }
+
+        }
+
+        &-moto {
+            @extend %mb-30;
+            color: $text-color-2;
+
+            @include breakpoint(md) {
+                max-inline-size: 40ch;
+                margin-block-end: 32px;
+            }
+        }
+    }
+
+    &__links {
+        &-tittle {
+            h5 {
+                color: $wh-color;
+                @extend %mb-20;
+
+                @include breakpoint(sm) {
+                    margin-block-end: 25px
+                }
+            }
+        }
+
+    }
+
+    &__linklist {
+        &-item {
+            &:not(:last-child) {
+                @extend %mb-15;
+
+            }
+
+            p {
+                color: $text-color;
+            }
+
+            a {
+                @include add-prefix(transition, $transition);
+                color: $text-color-2;
+                @extend %p-rel,
+                %d-inline-block;
+
+                &::after {
+                    @extend %p-abs;
+                    @include add-prefix(transform, translateY(-50%));
+                    content: "";
+                    transition: $transition;
+                    top: 50%;
+                    left: 0;
+                    width: 10px;
+                    height: 2px;
+                    background-color: currentColor;
+                    opacity: 0;
+                }
+
+                &:hover {
+                    @include add-prefix(transform, translateX(10px));
+                    color: $brand-color;
+
+                    &::after {
+                        opacity: 1;
+                        left: -12px;
+                    }
+                }
+
+
+                // &.style2 {
+                //     &:hover {
+                //         @include add-prefix(transform, translateX(10px));
+                //         color: $bg-color;
+
+                //         &::after {
+                //             opacity: 1;
+                //             left: -12px;
+                //         }
+                //     }
+                // }
+            }
+
+        }
+    }
+
+
+    &__bottom{
+        @extend %p-rel;
+        z-index: 11;
+    }
+
+
+    &__end {
+        @extend %py-25,
+        %p-rel;
+        color: $text-color-2;
+        z-index: 1;
+        @include font-size(16px);
+
+        @include breakpoint(md) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-copyright {
+            @extend %mb-20,
+            %d-inline-flex,
+            %align-i-center;
+
+            a {
+                @extend %text-semibold;
+                color: $brand-color;
+
+                // &.style2 {
+                //     color: $bg-color;
+                // }
+            }
+
+            @include breakpoint(md) {
+                margin-block-end: 0;
+            }
+        }
+
+        &-links {
+            @extend %d-flex,
+            %align-i-center,
+            %mt-25,
+            %mb-20;
+
+            @include breakpoint (max-sm) {
+                justify-content: space-between;
+            }
+
+            @include breakpoint(sm) {
+                gap: 10px;
+            }
+
+            @include breakpoint(md) {
+                gap: 20px;
+            }
+
+        }
+
+        &-item {
+            a {
+                color: $text-color;
+            }
+        }
+    }
+
+    &__subscription{
+        .subscription-form{
+            @extend %flex,
+            %of-hidden;
+            background-color: $bg-color-2;
+            border-radius: 8px;
+            border: 1px solid $border-color;
+            padding: 4px;
+            .form-control{
+                background-color: transparent;
+            border: none;
+            flex: 1;
+            }
+
+            button{
+                border: none;
+                border-radius: 8px;
+            }
+        }
+
+
+        
+    }
+
+    &__terms{
+        @extend %d-flex;
+        gap: 5px 20px;
+
+        @include breakpoint(xl){
+            gap: 50px;
+        }
+
+        @include breakpoint(xxl){
+            gap: 60px;
+        }
+
+        &--style2{
+            @include breakpoint(xl){
+                gap: 32px;
+            }
+        }
+    }
+
+    &--style2{
+        .footer{
+            &__about{
+                @extend %d-flex,
+                %justify-between,
+                %align-i-center,
+                 %pb-60;
+                 gap: 24px;
+                border-bottom: 1px solid $bg-color-6;
+
+                &-logo{
+                    & img{
+                        margin-bottom: 0;
+                    }
+                    
+                }
+            }
+
+            &__links{
+                @extend %d-grid;
+                gap: 0;
+            }
+        }
+        .social{
+            gap: 24px !important;
+            li{
+                background-color: $bg-color-3;
+                padding: 16px;
+                border-radius: 8px;
+                min-width: 198px;
+            }
+        }
+    }
+
+    .overlay{
+        z-index: 0;
+    }
+
+    // footer shpae
+
+    &__shape {
+
+        &-item {
+            @extend %p-abs;
+
+            &--1 {
+                max-width: 60px;
+                top: 8%;
+                right: 50%;
+                @include animation(left-right 3s cubic-bezier(0.41, 0.15, 0.64, 0.86) infinite alternate);
+
+                @include breakpoint(sm) {
+                    width: auto;
+                    top: 12%;
+                    right: 40%;
+                }
+
+                @include breakpoint(md) {
+                    top: 70%;
+                    right: 5%;
+                }
+
+                @include breakpoint(lg) {
+                    right: 5%;
+                    top: 17%;
+                }
+            }
+        }
+
+    }
+
+}

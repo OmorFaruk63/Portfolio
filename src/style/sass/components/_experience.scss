@@ -1,0 +1,244 @@
+.experience {
+    @extend %of-hidden;
+
+    &__item {
+        &-inner {
+            border-radius: 12px;
+            background-color: $bg-color;
+            transition: $transition;
+            padding: 32px;
+        }
+
+        &-wrapper{
+            @extend %d-flex, %p-rel,
+            %align-i-center,
+            %justify-between;
+            gap: 16px;
+            z-index: 2;
+
+
+        }
+
+        &-action {
+            @extend %d-grid,
+            %place-i-center;
+            @include box(48px);
+
+            border-radius: 99px;
+            border: 1px solid $brand-color;
+            transition: $transition;
+
+            svg,
+            i {
+                color: $brand-color;
+                transition: $transition;
+                font-size: 18px;
+            }
+        }
+
+        &-content {
+
+            i,
+            svg {
+                @extend %me-10;
+            }
+        }
+
+        &:hover,
+        &.active {
+            .experience__item {
+
+                &-action {
+                    background-color: $brand-color;
+                    transform: rotate(-45deg);
+
+                    i,
+                    svg {
+                        color: $body-color;
+                    }
+                }
+            }
+        }
+    }
+
+    &__tools {
+        @extend %d-flex,
+        %justify-center;
+        background-color: $bg-color;
+        padding-inline: 40px;
+        padding-block: 32px;
+        border-radius: 8px;
+        gap: 30px;
+
+        @include breakpoint(md) {
+            justify-content: space-between;
+            gap: 0
+        }
+
+
+        &-item {
+            @extend %d-grid,
+            %place-i-center,
+            %p-rel;
+            max-width: 120px;
+
+            h6 {
+                font-weight: normal;
+                margin-top: 10px;
+            }
+
+            &:not(:last-child) {
+                &::after {
+                    display: none;
+                    position: absolute;
+                    content: "";
+                    background: linear-gradient(to top, $brand-color, $secondary-color);
+                    top: 10px;
+                    right: -50px;
+                    width: 1px;
+                    height: 80%;
+                    opacity: .7;
+
+                    @include breakpoint(lg) {
+                        display: block;
+                    }
+
+                    @include breakpoint(xl) {
+                        right: -70px;
+                    }
+
+                    @include breakpoint(xxl) {
+                        right: -80px;
+                    }
+                }
+            }
+
+        }
+    }
+
+
+    &--style2 {
+        @extend %p-rel;
+
+        &::after{
+            @extend %p-abs;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color:hsla(60,5%,3%,1);
+            background-image:
+            radial-gradient(at 0% 100%, hsla(71,86%,51%,0.18) 0px, transparent 50%),
+            radial-gradient(at 100% 0%, hsla(71,86%,51%,0.09) 0px, transparent 50%);
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+        .experience {
+            &__wrapper {
+                @extend %p-rel;
+
+                &::after {
+                    display: none;
+                    @extend %p-abs;
+                    content: "";
+                    width: 2px;
+                    height: 95%;
+                    background-color: $bg-color;
+                    top: 40px;
+                    left: 180px;
+
+                    @include breakpoint(lg) {
+                        display: block;
+                    }
+
+                    @include breakpoint(xl) {
+                        left: 200px;
+                    }
+                }
+            }
+
+            &__item {
+                @extend %d-flex,
+                %justify-between,
+                %align-i-center;
+                gap: 10px;
+
+                @include breakpoint(lg) {
+                    gap: 40px;
+                }
+
+                @include breakpoint(xl) {
+                    gap: 100px;
+                }
+
+                &-content {
+                    margin-bottom: 20px;
+
+                    @include breakpoint(lg) {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        min-width: 600px;
+                        margin-bottom: 0;
+                    }
+                }
+
+                &-description {
+                    max-width: 39ch;
+
+                    p {
+                        margin-bottom: 0;
+                    }
+                }
+
+                &-period {
+                    position: relative;
+
+                    @include breakpoint(lg) {
+                        width: 180px;
+                    }
+
+
+                }
+
+                &-shape {
+                    display: none;
+                    @extend %p-abs;
+                    transition: $transition;
+                    content: "";
+                    @include box(35px);
+                    right: -20px;
+                    z-index: 99;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    color: $bg-color-2;
+
+                    @include breakpoint(lg){
+                        display: block;
+                    }
+
+                    @include breakpoint(xl){
+                        right: -39px;
+                    }
+                }
+
+                &-inner {
+                    @extend %p-rel;
+                    z-index: 2;
+                    @include breakpoint(lg) {
+                        flex: 1;
+                    }
+                }
+
+
+                &:hover,
+                &.active {
+                    .experience__item-shape {
+                        color: $brand-color;
+                    }
+                }
+
+            }
+        }
+    }
+}

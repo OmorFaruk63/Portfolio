@@ -1,0 +1,73 @@
+.social {
+    @extend %d-flex;
+    @extend %align-i-center;
+    @extend %list-none;
+    @extend %ps-0;
+    @extend %mb-0;
+    gap: 10px;
+    background-color: $bg-color-2;
+    width: fit-content;
+    padding: 8px;
+    border-radius: 99px;
+    @include breakpoint(md) {
+        gap: 16px;
+    }
+
+
+    &__item {
+        h6 {
+            @include font-size(18px);
+            font-family: $text-font;
+        }
+    }
+
+    &__link {
+        @extend %d-grid,
+        %place-i-center;
+        @include add-prefix(transition, background-color .2s linear);
+        background-color: transparent;
+        @include font-size(18px);
+        @include box(40px);
+        background-color: $body-color;
+        border-radius: 50%;
+        color: $text-color;
+
+
+        &.active,
+        &:hover {
+            background-color: $brand-color;
+            color: $body-color;
+        }
+    }
+
+    &--style2{
+        padding: 0;
+        background-color: transparent;
+        gap: 24px !important;
+
+        @include breakpoint(lg){
+            gap: 48px;
+        }
+
+        .social{
+            &__item{
+                @extend %d-flex,
+                %align-i-center;
+                gap: 8px;
+                color: $title-color;
+
+                &:hover,
+                &.active{
+                    .social__link{
+                        background-color: $brand-color;
+                        color: $body-color;
+                    }
+                }
+            }
+
+            &__link{
+                background-color: $bg-color-2;
+            }
+        }
+    }
+}

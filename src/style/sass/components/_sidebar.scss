@@ -1,0 +1,280 @@
+.sidebar {
+    @extend %of-hidden;
+
+    &__head {
+        @extend %p-rel;
+
+        h3 {
+            @extend %pb-15,
+            %mb-0;
+            border-bottom: 1px solid$border-color;
+        }
+
+        h6 {
+            @extend %text-semibold,
+            %pb-15,
+            %mb-0;
+            border-bottom: 1px solid$border-color;
+        }
+
+        h4 {
+            @extend %mb-0;
+        }
+    }
+
+    &__search {
+        @extend %p-25;
+        background-color: $bg-color;
+        box-shadow: 0px -16px 48px rgba(6, 35, 63, 0.03), 0px 16px 48px rgba(6, 35, 63, 0.03);
+        border-radius: 12px;
+
+
+        form {
+            @extend %p-rel;
+            background-color: $bg-color-3;
+            border-radius: 8px;
+
+            input {
+                @extend %p-15;
+                background-color: $bg-color-6;
+                border-color: $border-color;
+                border-radius: 8px;
+                cursor: text;
+
+
+                &:focus {
+                    box-shadow: none;
+                    border-color: $brand-color;
+                }
+            }
+
+            button {
+                @extend %p-abs;
+                content: "";
+                padding: 11px;
+                top: 14%;
+                right: 10px;
+                line-height: 10px;
+                border: none;
+                outline: none;
+                border-radius: 99px;
+                background-color: $brand-color;
+                color: $body-color;
+
+                i,
+                svg {
+                    @include font-size(18px);
+                }
+
+            }
+        }
+    }
+
+
+    &__categorie {
+        @extend %p-25;
+        background-color: $bg-color;
+        box-shadow: 0px -16px 48px rgba(6, 35, 63, 0.03), 0px 16px 48px rgba(6, 35, 63, 0.03);
+        border-radius: 12px;
+
+        &-body {
+            @extend %pt-25;
+
+            ul {
+                li {
+                    @extend %mb-15,
+                    %d-flex,
+                    %align-i-center,
+                    %justify-between;
+                    background-color: $bg-color-3;
+                    border-radius: 8px;
+                    padding-inline: 16px;
+                    padding-block: 12px;
+                    transition: $transition;
+
+                    &:last-child {
+                        margin-block-end: 0;
+                    }
+
+                    span,
+                    a {
+                        @extend %of-hidden,
+                        %text-regular;
+                        @include font-size(16px);
+                        @include add-prefix(transition, $transition);
+
+                        i,svg{
+                            transition: $transition;
+                        }
+                    }
+
+                    &.active,
+                    &:hover {
+                        span,
+                        a {
+                            @extend %text-medium;
+                            color: $brand-color;
+                        }
+
+                        span{
+                            i,svg{
+                                transform: rotate(-45deg)
+                            }
+                        }
+
+                    }
+
+                    a {
+                        i {
+                            @extend %me-5;
+                            color: $text-color-light;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__project {
+        @extend %p-25;
+        background-color: $bg-color;
+        box-shadow: 0px -16px 48px rgba(6, 35, 63, 0.03), 0px 16px 48px rgba(6, 35, 63, 0.03);
+        border-radius: 12px;
+
+        &-info {
+
+            ul {
+                li {
+                    @extend %mb-20;
+                    strong{
+                        display: inline-block;
+                        color: $title-color;
+                        width: 120px;
+
+                        @include breakpoint(lg){
+                            width: 80px;
+                        }
+
+                        @include breakpoint(xl){
+                            width: 120px;
+                        }
+                    }
+                    &:last-child {
+                        margin-block-end: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &__cta {
+        @extend %text-center;
+        background-color: $brand-color;
+        box-shadow: 0px -16px 48px rgba(6, 35, 63, 0.03), 0px 16px 48px rgba(6, 35, 63, 0.03);
+        border-radius: 12px;
+        padding-block: 48px;
+        h3,h4,h5{
+            color: $body-color;
+            margin-bottom: 32px;
+        }
+
+        h5{
+            @extend %text-medium;
+            margin-bottom: 16px;
+        }
+
+        .trk-btn--primary{
+            background-color: $body-color;
+            color: $title-color;
+        }
+    }
+
+    &__tags {
+        @extend %p-25;
+        background-color: $bg-color;
+        box-shadow: 0px -16px 48px rgba(6, 35, 63, 0.03), 0px 16px 48px rgba(6, 35, 63, 0.03);
+        border-radius: 12px;
+
+        &-body {
+            @extend %pt-25;
+
+        }
+    }
+
+    &__comment {
+        @extend %p-15,
+        %py-25,
+        %mt-40;
+        background-color: $bg-color;
+        border-radius: 16px;
+
+        @include breakpoint(lg) {
+            padding: 50px;
+        }
+
+        &-body {
+            @extend %pt-45;
+        }
+
+        &-item {
+            @extend %mb-40;
+
+            &:last-child {
+                margin-block-end: 0;
+            }
+
+            &--reply {
+                @extend %ms-30;
+
+                @include breakpoint(sm) {
+                    margin-inline-start: 50px;
+                }
+            }
+        }
+
+    }
+
+}
+
+
+
+
+// tag for global
+.tags {
+    ul {
+        @extend %d-flex;
+        gap: 25px 10px;
+
+        li {
+            border: none;
+
+            h6 {
+                @include font-size(18px);
+                font-family: $text-font;
+            }
+
+            a ,span {
+                @extend %text-regular,
+                %text-capitalize;
+                @include add-prefix(transition, $transition);
+                @include font-size(16px);
+                padding: 8px 16px;
+                color: $text-color;
+                border: 1px solid $border-color;
+                background-color: $bg-color-3;
+cursor: pointer;
+                outline: none;
+                border-radius: 99px;
+
+                &.active,
+                &:hover {
+                    background-color: $brand-color;
+                    border-color:$border-color;
+                    color: $body-color;
+                }
+            }
+        }
+    }
+
+    
+}

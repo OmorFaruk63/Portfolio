@@ -1,0 +1,153 @@
+/*!
+Template Name: Torkfolio, personal portfolio, resume template, HTML portfolio template, portfolio for designers, SEO friendly portfolio
+Template URI: 
+Author: thetork
+Author URI: https: //themeforest.net/user/thetork/portfolio
+Description: Torkfolio is a professional and modern HTML template designed for personal portfolios, resumes, and creative professionals. Showcase your skills, projects, and achievements with a sleek, SEO-optimized layout that ensures maximum visibility.
+Version: 1.0.0
+Text Domain: Torkfolio
+Tags: Torkfolio, personal portfolio, resume template, HTML portfolio template, portfolio for designers, SEO friendly portfolio
+
+*/
+
+
+
+/*
+-----------------Table of content start -----------------
+
+1. Configuration and helpers
+    -extends,
+    -variables,
+    -functions,
+    -mixins
+
+2. Vendors
+    -normalize,
+    -nice-select,
+    -rfs
+
+3. Base stuff
+    -fonts,
+    -typography,
+    -animations,
+    -common,
+    -helpers
+
+
+4. Layout-related sections
+    -account,
+    -header,
+    -banner,
+    -contact,
+    -account,
+    -form,
+    -footer
+
+
+5. Components
+    -about,
+    -accordion,
+    -blog-details,
+    -blog,
+    -button,
+    -case-studies,
+    -comment,
+    -counter,
+    -error,
+    -experience,
+    -feature,
+    -floating-content,
+    -lighdark-swich,
+    -nav,
+    -partner,
+    -portfolio,
+    -preloader,
+    -pricing,
+    -project-details,
+    -services-details,
+    -services,
+    -sidebar
+    -social-link
+    -story
+    -testimonial
+
+6. Page-specific styles
+    -home
+
+
+7. Themes
+    -theme
+
+-----------------Table of content end -----------------
+
+*/
+
+
+/*=====================================================================*/
+
+@charset "UTF-8";
+@import "bootstrap/scss/bootstrap";
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+
+// 1. Configuration and helpers
+@import 'abstracts/extends',
+'abstracts/variables',
+'abstracts/functions',
+'abstracts/mixins';
+
+// 2. Vendors
+@import 'vendors/normalize',
+'vendors/nice-select',
+'vendors/rfs';
+
+// 3. Base stuff
+@import 'base/fonts',
+'base/typography',
+'base/animations',
+'base/common',
+'base/helpers';
+
+
+// 4. Layout-related sections
+@import 'layout/header',
+'layout/banner',
+'layout/contact',
+'layout/account',
+'layout/form',
+'layout/footer';
+
+
+// 5. Components
+@import 'components/button',
+'components/preloader',
+'components/lightdark-switch',
+'components/social-link',
+'components/floating-content',
+'components/partner',
+'components/feature',
+'components/service',
+'components/pricing',
+'components/experience',
+'components/blog',
+'components/blog-details',
+'components/testimonial',
+'components/case-studies',
+'components/story',
+'components/sidebar',
+'components/error',
+'components/service-details',
+'components/project-details',
+'components/portfolio',
+'components/nav',
+'components/counter',
+'components/comment',
+'components/accordion',
+'components/about';
+
+// 6. Page-specific styles
+@import 'pages/home';
+
+
+// 8. Themes
+@import 'themes/theme';

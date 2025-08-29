@@ -1,0 +1,124 @@
+.blog-details {
+    @extend %of-hidden, %p-rel;
+
+
+    &__item {
+        &-inner {
+            @extend %p-30;
+            background-color: $bg-color;
+            box-shadow: 0px -16px 48px rgba(6, 35, 63, 0.03), 0px 16px 48px rgba(6, 35, 63, 0.03);
+            border-radius: 12px;
+
+            @include breakpoint(md) {
+                padding: 50px
+            }
+        }
+    }
+
+    &__thumb {
+        @extend %of-hidden,
+        %mb-35;
+        border-radius: 8px;
+        border: 2px solid $border-color;
+
+        img {
+            @extend %w-100;
+            @include add-prefix(transition, $transition);
+            object-fit: cover;
+        }
+
+        &:hover {
+            img {
+                @include add-prefix(transform, scale(1.01));
+            }
+        }
+    }
+
+    &__meta {
+        @extend %pb-25;
+        color: $text-color-light;
+
+        ul {
+            @extend %d-flex,
+            %align-i-center;
+            flex-wrap: wrap;
+            gap: .5rem 1rem;
+
+
+            @include breakpoint(md) {
+                gap: 30px;
+            }
+
+            li {
+                @extend %d-inline-flex,
+                %align-i-center;
+                text-transform: capitalize;
+
+                a {
+                    color: $text-color-light;
+                }
+
+                i,
+                svg {
+                    font-size: 20px;
+                    color: $secondary-color;
+                    margin-inline-end: 8px;
+
+                    @include breakpoint(max-md) {
+                        margin-inline-end: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__content {
+        @extend %mb-35;
+
+        h3 {
+            @extend %text-capitalize;
+            @extend %mb-10;
+
+        }
+
+        p {
+            color: $text-color;
+        }
+    }
+
+    &__segment {
+        &-item {
+            @extend %mb-35;
+        }
+
+        &-content {
+            h5 {
+                @extend %text-medium,
+                %text-capitalize;
+            }
+        }
+
+        &-thumb {
+            img {
+                border-radius: 8px;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+
+    &__commentform {
+        @extend %p-30,
+        %mt-40;
+        background-color: $bg-color;
+        border-radius: 16px;
+
+        @include breakpoint(lg) {
+            padding: 40px;
+        }
+    }
+
+
+
+}

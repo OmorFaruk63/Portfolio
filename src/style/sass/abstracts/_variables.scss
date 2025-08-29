@@ -1,0 +1,219 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+
+
+
+
+
+//===================== Theme varibale for  ** Light ** ===================== //
+
+// :root {
+//     --brand-color: #C4EF17;
+//     --secondary-color:#{$thm-secondary-color}; //blue
+//     --tertiary-color: #E0FAF2;
+//     --tertiary-color2: #F5F7FC;
+//     --tertiary-color3: #F5F7FC;
+//     --tertiary-color4: #3863e0;
+//     --body-color:#{$thm-body-color-light};
+//     --header-bg-color: #0e352a;
+//     --header-bg-color2: #093d47;
+//     --border-color: #E6EDFB;
+//     --border-color-5: #F1F4FB;
+//     --border-color-6: #E5F9F3;
+//     --border-color-7: #9DB9EE;
+//     --border-color-8: rgba(189, 189, 189, 0.2);
+//     --border-color-9: rgba(5, 0, 26, 0.12);
+//     --border-color-10: rgba(20, 24, 33, 0.10);
+//     --border-color-11: #E6E6E6;
+//     --feature-bg-color: #00150F;
+//     --social-border-color: #F0F4FA;
+//     --social-border-color-2: #ECEFF2;
+//     --social-border-color-3: #ECEFF2;
+//     --form-border: #CFDEF1;
+
+//     --title-color:#{$title-color};
+//     --title-color-style2:#{$title-color};
+//     --text-color:#6B6F7F;
+//     --text-color-light: #6B6F7F;
+//     --text-color-2: rgba(255, 255, 255, 0.6);
+//     --text-color-3: rgba(255, 255, 255, 0.70);
+//     --text-color-4: #B0B3BF;
+//     --bg-color: #EDF2F8;
+//     --bg-color-trans: rgba(237, 242, 248, 0.22);
+//     --bg-grad-color: #FFF;
+//     --bg-grad-color-trans: rgba(255, 255, 255, 0.00);
+//     --bg-grad-color-2: #D5E5F9;
+//     --bg-grad-color-trans-2: rgba(255, 255, 255, 0.22);
+//     --bg-grad-color-3: #E9EFF7;
+//     --bg-grad-color-trans-3: rgba(240, 244, 250, 0.16);
+//     --bg-grad-color-4: rgba(0, 208, 148, 0.32);
+//     --bg-grad-color-trans-4: rgba(229, 237, 248, 0.00);
+//     --bg-color-2: #F6F6F8;
+//     --bg-color-3: #FFFFFF;
+//     --bg-color-4:#{$thm-bg-color-4-light};
+//     --bg-color-4:#{$thm-bg-color-4-light};
+//     --bg-color-6:#{$thm-bg-color-6-light};
+//     --bg-color-5: #F1F4FB;
+//     --bg-color-8: #124D6D;
+//     --bg-color-9: #FFFF;
+//     --bg-color-10: #d7ff80;
+//     --bg-color-11: #141821;
+//     --bg-color-12: #141821;
+//     --bg-color-14: #FFF6E0;
+
+
+
+
+//     --bg-white: #ffffff;
+//     --bg-team: #d6e5ff;
+//     --form-focus-color: #366CD5;
+//     --wh-color:#{$wh-color};
+//     --black-color:#{$black-color};
+//     --floating-content-bg-color: rgba(255, 255, 255, 0.95);
+//     --floating-content-bg-color-2: rgba(255, 255, 255, 0.50);
+//     --service-item-border-color: #fff;
+//     --service-item-bg-color: #fff;
+//     --faq-item-btn-border-color: #03314b12;
+//     --faq-bg-color: #fff;
+//     --extra-bg-color: #fff;
+//     --tag-bg-color: #EDFFFA;
+//     --bg-shape-color: #B8CFEB;
+//     --bg-shape-color-2: #D5E5F9;
+//     --bg-shape-color-trans-2: rgba(255, 255, 255, 0.22);
+//     --footer-bg-color: #00150F;
+//     --faq-img-bg-shadow: #16d466;
+//     --pagination-bg-color: #E0FAF2;
+//     --section-bg-color: #f8f8f8;
+//     --sec-bg-color-2: #fff;
+//     --account-bg-color: #F5F7FC;
+//     --account-bg-color2: #FFF;
+//     --arrow-color1: #B5CAF2;
+//     --arrow-icon-color: #0A4FD5;
+//     --header-border-color: #EBE9E1;
+//     --header-border-color2: rgba(255, 255, 255, 0.12);
+//     --banner2-bg-color: #0e241d;
+//     --about-img-bg-shadow: #85F2D382;
+//     --cta-img-bg-shadow: #45554b;
+//     --warning-color:#{$thm-warning-light};
+
+//     .accordion-button:after {
+//         --bs-accordion-btn-icon: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"> <style>svg{fill:%23000000}</style><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>');
+//         --bs-accordion-btn-active-icon: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"> <style>svg{fill:%2300D094}</style><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>');
+//     }
+
+//     .accordion-button--style2:after {
+//         --bs-accordion-btn-icon: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"> <style>svg{fill:%23000000}</style><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>');
+//         --bs-accordion-btn-active-icon: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"> <style>svg{fill:%23000}</style><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>');
+//     }
+
+//     .accordion-button--style3:after {
+//         --bs-accordion-btn-icon: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"> <style>svg{fill:%23000000}</style><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>');
+//         --bs-accordion-btn-active-icon: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"> <style>svg{fill:%230A4FD5}</style><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>');
+//     }
+// }
+
+//===================== Theme varibale for  ** Dark ** ===================== //
+[data-bs-theme="dark"] {
+    --brand-color: #C4EF17;
+    --secondary-color:#6B7FFF;
+    --body-color:#0A0A09;
+    --border-color:#E6EDFB1F;
+
+    --form-border:#DCDFE833;
+    --form-border-2:#c4ef1748;
+    --title-color:#FBFFED;
+
+    --text-color:#9FA0A6;
+
+    --bg-color: #141413;
+    --bg-color-2: #242423;
+    --bg-color-3:#191918;
+    --bg-color-4: #31396B;
+    --bg-color-5: #F6F6F8;
+
+    --partner-bg-color:#10100f;
+
+    --bg-white:#ffffff;
+    --yellow-color:#FFD966;
+    --wh-color: #fff;
+    --black-color:#000;
+    --floating-content-border-color: rgba(0, 0, 0, 0.02);
+
+}
+
+//*-----------------------------------
+//*** Custom variables for theme end
+//*-----------------------------------
+
+//===================== Variables start===================== //
+// theme colors
+$brand-color: var(--brand-color);
+$secondary-color: var(--secondary-color);
+$body-color: var(--body-color);
+$border-color: var(--border-color);
+
+
+
+$form-border: var(--form-border);
+$form-border-2: var(--form-border-2);
+$title-color: var(--title-color);
+$text-color: var(--text-color);
+$text-color-light: var(--text-color-light);
+$text-color-2: var(--text-color-2);
+$text-color-3: var(--text-color-3);
+$text-color-4: var(--text-color-4);
+$wh-color: var(--wh-color);
+$black-color: var(--black-color);
+$yellow-color: var(--yellow-color);
+
+// background colors
+$bg-color: var(--bg-color);
+$bg-color-2: var(--bg-color-2);
+$bg-color-3: var(--bg-color-3);
+$bg-color-4: var(--bg-color-4);
+$bg-color-5: var(--bg-color-5);
+$bg-color-6: var(--bg-color-6);
+
+$parnter-bg-color:var(--partner-bg-color);
+
+
+
+$section-bg-color: var(--section-bg-color);
+$account-bg-color: var(--account-bg-color);
+
+
+// extra colors
+$floating-content-border-color: var(--floating-content-border-color);
+$faq-item-btn-border-color: var(--faq-item-btn-border-color);
+
+
+
+// form
+$form-focus-color: var(--form-focus-color);
+
+
+
+//=====================>>>\ Variables end ===================== //
+
+
+
+//Template Font family
+
+$title-font:"Noto Sans", serif;
+
+$text-font: "Noto Sans", serif;
+
+//Template font sizes
+$fs-base: 16px !default;
+$fs-small: 14px;
+$fs-h1: 60px;
+$fs-h2: 40px;
+$fs-h3: 32px;
+$fs-h4: 24px;
+$fs-h5: 20px;
+$fs-h6: 18px;
+
+//Template transition
+$transition: all .3s ease-out;
